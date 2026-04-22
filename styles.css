@@ -185,6 +185,8 @@ a:hover { color: var(--gold-light); }
 }
 .logo-mark { color: var(--gold); font-size: 0.9rem; }
 .logo em { font-style: italic; color: var(--gold); }
+.logo-img { height: 40px; width: auto; display: block; }
+.footer-logo-img { height: 48px; width: auto; display: block; margin-bottom: 10px; }
 
 .nav-links {
   display: flex;
@@ -237,6 +239,15 @@ a:hover { color: var(--gold-light); }
   margin-bottom: 24px;
 }
 
+.hero-tagline {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
 .hero-sub {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.72);
