@@ -1,6 +1,16 @@
 {
   "routes": [
     {
+      "route": "/rules",
+      "serve": "/rules.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/rules.html",
+      "serve": "/rules.html",
+      "statusCode": 200
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
