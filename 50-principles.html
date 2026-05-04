@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 50 Principles of AI Safety &amp; Ethics — Block by Block Alliance</title>
+  <meta name="description" content="Download the complete 50 Principles of AI Safety and Ethics from the Block by Block Alliance. Free resource. Use it to assess your AI readiness and find your path in the AI Impact Academy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #060B18;
+      --navy2: #0A1020;
+      --gold: #C9A84C;
+      --gold-light: #E4C46C;
+      --gold-dim: rgba(201,168,76,0.08);
+      --white: #ffffff;
+      --off-white: #F5F6F8;
+      --text-dark: #111827;
+      --text-body: #374151;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --domain-1: #1e3a5f;
+      --domain-2: #1a4731;
+      --domain-3: #4a1942;
+      --domain-4: #3d2a00;
+      --domain-5: #162040;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--off-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ── PRINT BUTTON BAR ── */
+    .print-bar {
+      background: var(--navy);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .print-bar a.back { color: rgba(255,255,255,0.6); font-size: 0.82rem; text-decoration: none; }
+    .print-bar a.back:hover { color: var(--gold); }
+    .print-bar .print-actions { display: flex; gap: 10px; align-items: center; }
+    .print-bar button, .print-bar a.cta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-print {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+    }
+    .btn-print:hover { background: var(--gold-light); }
+    a.cta-academy {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.85);
+    }
+    a.cta-academy:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── COVER ── */
+    .cover {
+      background: var(--navy);
+      padding: 64px 32px 56px;
+      text-align: center;
+    }
+    .cover-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .cover h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 14px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cover .cover-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 560px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .cover-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+    .cover-meta span { display: flex; align-items: center; gap: 6px; }
+    .cover-meta span::before { content: '·'; }
+    .cover-meta span:first-child::before { content: none; }
+
+    /* ── INTRO ── */
+    .intro-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 0;
+    }
+    .intro-text {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .three-laws-bar {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 22px 28px;
+      margin: 28px 0 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 600px) { .three-laws-bar { grid-template-columns: 1fr; } }
+    .law-pill {
+      text-align: center;
+      padding: 12px;
+    }
+    .law-pill .num {
+      display: inline-block;
+      width: 26px; height: 26px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      font-size: 0.7rem; font-weight: 800;
+      line-height: 26px;
+      margin-bottom: 8px;
+    }
+    .law-pill strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .law-pill span {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      line-height: 1.45;
+      display: block;
+    }
+
+    /* ── DOMAIN SECTION ── */
+    .domain-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .domain {
+      margin: 40px 0;
+    }
+    .domain-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 24px;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 0;
+    }
+    .domain-1 .domain-header { background: var(--domain-1); }
+    .domain-2 .domain-header { background: var(--domain-2); }
+    .domain-3 .domain-header { background: var(--domain-3); }
+    .domain-4 .domain-header { background: var(--domain-4); }
+    .domain-5 .domain-header { background: var(--domain-5); }
+
+    .domain-num {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .domain-header h2 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .domain-header .domain-range {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+    }
+    .principles-grid {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+    }
+    .principle {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .principle:last-child { border-bottom: none; }
+    .p-num {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 16px 0 16px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--muted);
+      font-family: 'Inter', monospace;
+      letter-spacing: 0.04em;
+      border-right: 1px solid var(--border);
+      background: var(--off-white);
+    }
+    .p-content {
+      padding: 14px 20px;
+    }
+    .p-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+    .p-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── ACADEMY CTA ── */
+    .academy-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 40px 36px;
+      margin: 40px 0 60px;
+      text-align: center;
+    }
+    .academy-cta h3 {
+      font-family: 'Merriweather', serif;
+      color: var(--white);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .academy-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+      line-height: 1.65;
+    }
+    .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-primary:hover { background: var(--gold-light); }
+    .cta-ghost {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.88rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      .print-bar, .academy-cta { display: none !important; }
+      body { background: white; font-size: 10pt; }
+      .cover { padding: 32px 24px; }
+      .cover h1 { font-size: 1.6rem; }
+      .domain { break-inside: avoid; margin: 24px 0; }
+      .principle { break-inside: avoid; }
+      .domain-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .p-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PRINT BAR -->
+<div class="print-bar">
+  <a href="/rules.html" class="back">← Block by Block Alliance Rules &amp; Regulations</a>
+  <div class="print-actions">
+    <a href="https://pureexpertz.pro/may2026" class="cta-academy">AI Impact Academy →</a>
+    <button class="btn-print" onclick="window.print()">⬇ Save / Print PDF</button>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-badge">Free Resource — Block by Block Alliance</div>
+  <h1>The 50 Principles of<br />AI Safety &amp; Ethics</h1>
+  <p class="cover-sub">
+    The complete operating framework for ethical, legal, and human-centered AI.
+    Fifty principles across five domains. Use this to assess where you stand
+    and choose your path in the AI Impact Academy.
+  </p>
+  <div class="cover-meta">
+    <span>Pure Expertz LLC</span>
+    <span>Block by Block Alliance v1.1</span>
+    <span>May 2026</span>
+    <span>Free to share with attribution</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro-wrap">
+  <p class="intro-text">
+    Every AI practitioner, business leader, and community member operates inside a framework — whether they know it or not. The 50 Principles make that framework explicit. They are not rules handed down from on high. They are the practical, hard-earned lessons of building with AI inside real organizations, real families, and real communities.
+  </p>
+  <p class="intro-text">
+    All 50 flow from three immutable laws. Before you read the principles, understand the laws they serve:
+  </p>
+  <div class="three-laws-bar">
+    <div class="law-pill">
+      <div class="num">1</div>
+      <strong>Use AI Legally</strong>
+      <span>No deception. No fraud. No use of AI to manipulate, harm, or bypass consent.</span>
+    </div>
+    <div class="law-pill">
+      <div class="num">2</div>
+      <strong>Use AI Ethically</strong>
+      <span>Be transparent. Be auditable. Respect dignity, privacy, and human autonomy.</span>
+    </div>
+    <div class="law-pill">
+      <div class="num">3</div>
+      <strong>Use AI Morally</strong>
+      <span>Build systems that make humans stronger. Create value for all stakeholders.</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRINCIPLES -->
+<div class="domain-wrap">
+
+  <!-- DOMAIN 1: HUMAN -->
+  <div class="domain domain-1">
+    <div class="domain-header">
+      <div class="domain-num">Domain I</div>
+      <h2>Human Principles</h2>
+      <span class="domain-range">01–10</span>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="p-num">01</div>
+        <div class="p-content">
+          <div class="p-title">Strong humans come first. Smart systems second.</div>
+          <div class="p-desc">The purpose of AI is to extend human capability — never to replace human responsibility.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">02</div>
+        <div class="p-content">
+          <div class="p-title">AI is a tool. The human is the decision-maker.</div>
+          <div class="p-desc">Final judgment, accountability, and moral weight remain with the person — not the system.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">03</div>
+        <div class="p-content">
+          <div class="p-title">Never deploy AI where you are not willing to be accountable for its output.</div>
+          <div class="p-desc">If you cannot own the result, you cannot own the system.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">04</div>
+        <div class="p-content">
+          <div class="p-title">Dependency is the enemy of resilience.</div>
+          <div class="p-desc">Build AI systems that make people more capable, not systems that collapse when the AI is unavailable.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">05</div>
+        <div class="p-content">
+          <div class="p-title">Human dignity is non-negotiable.</div>
+          <div class="p-desc">No AI application — regardless of efficiency gains — justifies the erosion of human dignity for any individual or group.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">06</div>
+        <div class="p-content">
+          <div class="p-title">Train the human before deploying the system.</div>
+          <div class="p-desc">AI literacy is a prerequisite, not an afterthought. Untrained users produce unpredictable outcomes.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">07</div>
+        <div class="p-content">
+          <div class="p-title">Consent is required before AI touches a person's data, behavior, or decisions.</div>
+          <div class="p-desc">Implied consent is not consent. Automated systems must have explicit opt-in where it matters.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">08</div>
+        <div class="p-content">
+          <div class="p-title">AI does not care about you. You must care about the people AI touches.</div>
+          <div class="p-desc">Systems have no empathy. That responsibility belongs entirely to the humans who build and deploy them.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">09</div>
+        <div class="p-content">
+          <div class="p-title">Protect the vulnerable first.</div>
+          <div class="p-desc">Children, the elderly, people with cognitive decline, and marginalized communities bear the highest risk from AI misuse. Design with them in mind.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">10</div>
+        <div class="p-content">
+          <div class="p-title">Strong families build strong communities. Strong communities build strong systems.</div>
+          <div class="p-desc">AI safety is not just a corporate problem. The household is the first unit of protection.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMAIN 2: BUSINESS -->
+  <div class="domain domain-2">
+    <div class="domain-header">
+      <div class="domain-num">Domain II</div>
+      <h2>Business Principles</h2>
+      <span class="domain-range">11–20</span>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="p-num">11</div>
+        <div class="p-content">
+          <div class="p-title">Start with the problem. Never start with the tool.</div>
+          <div class="p-desc">AI adoption fails when it starts with "what can AI do?" instead of "what problem do we need to solve?"</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">12</div>
+        <div class="p-content">
+          <div class="p-title">Map the process before automating it.</div>
+          <div class="p-desc">Automating a broken process produces faster broken outcomes. Document and fix first.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">13</div>
+        <div class="p-content">
+          <div class="p-title">Implement one AI workflow at a time.</div>
+          <div class="p-desc">Organizations that try to transform everything at once transform nothing. Sequence is strategy.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">14</div>
+        <div class="p-content">
+          <div class="p-title">Measure before and after. Every time.</div>
+          <div class="p-desc">ROI is not optional. If you cannot measure the impact of an AI implementation, you cannot justify its continuation or expansion.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">15</div>
+        <div class="p-content">
+          <div class="p-title">Vendor agreements are risk agreements.</div>
+          <div class="p-desc">Every AI vendor you bring in is a liability partner. Know their data practices, uptime terms, and exit clauses before you sign.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">16</div>
+        <div class="p-content">
+          <div class="p-title">Build an AI Acceptable Use Policy before your first deployment.</div>
+          <div class="p-desc">Your team will use AI with or without guidance. Policy establishes the standard. Absence of policy establishes chaos.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">17</div>
+        <div class="p-content">
+          <div class="p-title">AI literacy is a competitive advantage today. It will be table stakes tomorrow.</div>
+          <div class="p-desc">The window for early-mover advantage in AI adoption is closing. Train your people now.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">18</div>
+        <div class="p-content">
+          <div class="p-title">Human oversight is required on all consequential AI outputs.</div>
+          <div class="p-desc">Hiring decisions, financial assessments, healthcare recommendations, legal filings — never fully automated. Always reviewed.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">19</div>
+        <div class="p-content">
+          <div class="p-title">The AI governance conversation must happen at the leadership level.</div>
+          <div class="p-desc">AI strategy delegated entirely to IT is AI strategy without organizational context. Leadership must own it.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">20</div>
+        <div class="p-content">
+          <div class="p-title">Share what works. Report what doesn't.</div>
+          <div class="p-desc">The Alliance community grows stronger when members contribute real experience — successes and failures alike.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMAIN 3: LEGAL -->
+  <div class="domain domain-3">
+    <div class="domain-header">
+      <div class="domain-num">Domain III</div>
+      <h2>Legal Principles</h2>
+      <span class="domain-range">21–30</span>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="p-num">21</div>
+        <div class="p-content">
+          <div class="p-title">You are responsible for every action your AI takes on your behalf.</div>
+          <div class="p-desc">"The AI did it" is not a legal defense. You are the operator. You carry the liability.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">22</div>
+        <div class="p-content">
+          <div class="p-title">Know the law in every jurisdiction where you deploy.</div>
+          <div class="p-desc">AIVIA, BIPA, SB 2427, HIPAA, CCPA — the regulatory map is complex and state-specific. Ignorance is not a defense.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">23</div>
+        <div class="p-content">
+          <div class="p-title">Hiring AI is under a microscope.</div>
+          <div class="p-desc">Automated screening, scoring, and selection tools used in employment face the most aggressive current regulation. Audit before and continuously after deployment.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">24</div>
+        <div class="p-content">
+          <div class="p-title">Biometric data requires explicit consent and strict retention limits.</div>
+          <div class="p-desc">Illinois BIPA is the nation's most aggressive biometric privacy law. If you collect facial, voice, or fingerprint data — you need a lawyer and a policy before you deploy.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">25</div>
+        <div class="p-content">
+          <div class="p-title">AI-generated content carries disclosure obligations in many contexts.</div>
+          <div class="p-desc">Advertising, medical advice, legal documents, and educational content created by AI may require disclosure. Know your sector's rules.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">26</div>
+        <div class="p-content">
+          <div class="p-title">Data retention and deletion obligations extend to AI training data.</div>
+          <div class="p-desc">If a person's data was used to train a model, that may create rights of deletion and audit under applicable law.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">27</div>
+        <div class="p-content">
+          <div class="p-title">Automate within the law. Never around it.</div>
+          <div class="p-desc">No efficiency gain — however compelling — justifies using AI to circumvent legal requirements, consent frameworks, or reporting obligations.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">28</div>
+        <div class="p-content">
+          <div class="p-title">Surveillance AI requires the highest threshold of justification.</div>
+          <div class="p-desc">Monitoring employees, students, or community members with AI has significant legal and ethical constraints. The burden of proof is on the deployer.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">29</div>
+        <div class="p-content">
+          <div class="p-title">When in doubt, disclose. AI use disclosed is almost never a liability.</div>
+          <div class="p-desc">Concealed AI use, when discovered, destroys trust and creates legal exposure. Transparency is the default.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">30</div>
+        <div class="p-content">
+          <div class="p-title">Get legal review before deploying AI in regulated industries.</div>
+          <div class="p-desc">Healthcare, finance, education, and government are not general-purpose sandboxes. Domain-specific legal review is required before deployment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMAIN 4: ETHICAL -->
+  <div class="domain domain-4">
+    <div class="domain-header">
+      <div class="domain-num">Domain IV</div>
+      <h2>Ethical Principles</h2>
+      <span class="domain-range">31–40</span>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="p-num">31</div>
+        <div class="p-content">
+          <div class="p-title">Bias in, bias out. Audit your training data.</div>
+          <div class="p-desc">Discriminatory outcomes often trace back to discriminatory training data. Responsible deployment includes disparate impact analysis.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">32</div>
+        <div class="p-content">
+          <div class="p-title">Explainability is an ethical requirement, not a technical option.</div>
+          <div class="p-desc">If you cannot explain how an AI system reached a decision to the person it affects, that system should not be making decisions about that person.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">33</div>
+        <div class="p-content">
+          <div class="p-title">Do not use AI to manufacture false urgency or manufactured scarcity.</div>
+          <div class="p-desc">Algorithmic manipulation of consumer behavior — countdown timers, fake stock levels, personalized fear triggers — is an ethical violation.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">34</div>
+        <div class="p-content">
+          <div class="p-title">Deepfakes and synthetic identity are ethical red lines.</div>
+          <div class="p-desc">Creating AI-generated likeness of real people without explicit consent — for any purpose — crosses a line that no business justification resolves.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">35</div>
+        <div class="p-content">
+          <div class="p-title">Test for harm before deployment. Not after.</div>
+          <div class="p-desc">Ethical review is not a post-launch activity. Include affected-group representation in your pre-deployment testing process.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">36</div>
+        <div class="p-content">
+          <div class="p-title">AI should expand access, not concentrate power.</div>
+          <div class="p-desc">Deployments that systematically advantage one group while disadvantaging another are not neutral tools — they are ethical failures.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">37</div>
+        <div class="p-content">
+          <div class="p-title">Transparency about AI use builds trust. Concealment destroys it.</div>
+          <div class="p-desc">People have a right to know when they are interacting with an AI system. Disclose it. The trust you protect is worth more than the friction you avoid.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">38</div>
+        <div class="p-content">
+          <div class="p-title">Financial incentives do not override ethical obligations.</div>
+          <div class="p-desc">Revenue, efficiency, or competitive pressure are never sufficient justification for an unethical AI deployment. Full stop.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">39</div>
+        <div class="p-content">
+          <div class="p-title">Community accountability is part of the ethical framework.</div>
+          <div class="p-desc">Your AI does not operate in a vacuum. Its effects ripple into communities, families, and systems. That ripple is your responsibility.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">40</div>
+        <div class="p-content">
+          <div class="p-title">The question "should we?" comes before "could we?"</div>
+          <div class="p-desc">Technical capability is never sufficient justification. Every deployment requires an ethical feasibility check before a technical one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMAIN 5: GROWTH -->
+  <div class="domain domain-5">
+    <div class="domain-header">
+      <div class="domain-num">Domain V</div>
+      <h2>Growth Principles</h2>
+      <span class="domain-range">41–50</span>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="p-num">41</div>
+        <div class="p-content">
+          <div class="p-title">AI literacy compounds. Start now, however small.</div>
+          <div class="p-desc">Three AI-assisted tasks per week is how you begin. The compounding effect over twelve months is transformational.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">42</div>
+        <div class="p-content">
+          <div class="p-title">Teach what you learn. The community gets stronger when knowledge flows.</div>
+          <div class="p-desc">Hoarding AI knowledge is a short-term competitive strategy with long-term isolation costs. Share.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">43</div>
+        <div class="p-content">
+          <div class="p-title">AI is not your replacement. It is your leverage.</div>
+          <div class="p-desc">The practitioner who embraces AI as a force multiplier will outperform the one who resists — and outlast the one who outsources everything to it.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">44</div>
+        <div class="p-content">
+          <div class="p-title">Build with the end in mind. Every AI project has an exit condition.</div>
+          <div class="p-desc">What happens when the vendor shuts down? When the model is deprecated? When the data pipeline breaks? Design for resilience, not just performance.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">45</div>
+        <div class="p-content">
+          <div class="p-title">Your brand is your most valuable AI asset.</div>
+          <div class="p-desc">Every AI interaction your brand produces — chatbots, emails, content — either builds or erodes trust. Protect the brand in every AI deployment.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">46</div>
+        <div class="p-content">
+          <div class="p-title">Certification matters. Accountability follows credentials.</div>
+          <div class="p-desc">AI certifications create accountability structures. When something goes wrong, there is a certified human responsible. This is a feature, not a burden.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">47</div>
+        <div class="p-content">
+          <div class="p-title">AI governance is a growth function, not a compliance function.</div>
+          <div class="p-desc">Organizations that treat AI governance as overhead will lose to organizations that treat it as a competitive advantage.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">48</div>
+        <div class="p-content">
+          <div class="p-title">Build coalitions. AI safety is a collective problem.</div>
+          <div class="p-desc">No single organization can solve AI governance alone. The Alliance model — shared standards, local deployment — is the only architecture that scales.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">49</div>
+        <div class="p-content">
+          <div class="p-title">Iteration is the practice. Perfection is the trap.</div>
+          <div class="p-desc">The Alliance framework is versioned for a reason. The goal is not a perfect system on day one — it is a system that gets measurably better every cycle.</div>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-num">50</div>
+        <div class="p-content">
+          <div class="p-title">Strong humans build strong systems. Always.</div>
+          <div class="p-desc">This is where we started. This is where we end. The quality of the human at the center of any AI system determines everything.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACADEMY CTA -->
+  <div class="academy-cta">
+    <h3>Ready to put these principles into practice?</h3>
+    <p>
+      The AI Impact Academy is where you go from knowing the framework to living it.<br />
+      Three certification tracks. Community accountability. Real implementation support.
+    </p>
+    <div class="cta-group">
+      <a href="https://pureexpertz.pro/may2026" class="cta-primary">Register for the AI Impact Academy →</a>
+      <a href="https://blockbyblockalliance.com/acknowledge" class="cta-ghost">Sign the Alliance →</a>
+    </div>
+    <p style="margin-top:20px;font-size:0.75rem;color:rgba(255,255,255,0.35);">
+      Block by Block AI Safety &amp; Security Alliance · Pure Expertz LLC · blockbyblockalliance.com<br />
+      Free to share with attribution. Not for resale.
+    </p>
+  </div>
+
+</div><!-- /domain-wrap -->
+
+</body>
+</html>

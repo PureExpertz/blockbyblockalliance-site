@@ -186,15 +186,125 @@
     }
     .rr-club-block h4 {
       font-size: 1rem;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       font-family: 'Inter', sans-serif;
       font-weight: 700;
       color: var(--navy);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
     }
     .rr-club-block .club-what {
       font-size: 0.92rem;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      line-height: 1.7;
+      color: var(--text-body);
     }
+    .rr-prop-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin: 14px 0 6px;
+    }
+    .rr-prop-label:first-of-type { margin-top: 0; }
+    .rr-club-block ul, .rr-club-block ol {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 4px;
+    }
+    .rr-club-block li {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .rr-club-block li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+    .rr-cert-block {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--navy);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .rr-cert-block h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 10px;
+    }
+    .rr-cert-block ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 0;
+    }
+    .rr-cert-block li {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .rr-cert-block li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+    /* Download CTA */
+    .rr-download-bar {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .rr-download-bar .dl-text h4 {
+      color: var(--white);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .rr-download-bar .dl-text p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.83rem;
+      margin: 0;
+    }
+    .rr-download-bar a.dl-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 11px 24px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .rr-download-bar a.dl-btn:hover { background: var(--gold-light); }
 
     .rr-table {
       width: 100%;
@@ -301,6 +411,15 @@
   <!-- DOCUMENT BODY -->
   <div class="rr-body">
 
+    <!-- 50 PRINCIPLES DOWNLOAD BAR -->
+    <div class="rr-download-bar">
+      <div class="dl-text">
+        <h4>Free Resource — The 50 Principles of AI Safety &amp; Ethics</h4>
+        <p>Download the full framework. Use it to assess your AI readiness and choose your path inside the AI Impact Academy.</p>
+      </div>
+      <a href="/50-principles" class="dl-btn" target="_blank">Download Free ↗</a>
+    </div>
+
     <!-- PREAMBLE -->
     <div class="rr-preamble" id="preamble">
       <strong>Preamble</strong><br /><br />
@@ -367,25 +486,67 @@
       <div class="rr-club-block">
         <h4>Section 3.1 — The Strong Humans Club</h4>
         <p class="club-what">The professional track of the Alliance — for <strong>professionals, leaders, executives, and operators</strong> who want to be at the top of the knowledge base. Members hold each other accountable, share what works, and refine the operating standards by which the Alliance evolves.</p>
-        <p><strong>Entry:</strong> Open enrollment via AI Impact Academy or direct Alliance membership pathway, subject to professional self-identification and adherence to the Three Laws.</p>
-        <p><strong>Benefits:</strong> Alliance member certificate · Full 50 Principles framework · SOP library · Alliance community forums · Directory listing · Priority AI Impact Academy cohort access</p>
-        <p><strong>Obligations:</strong> AI used legally, ethically, morally at all times · Community accountability participation · Annual re-commitment to Three Laws · Compliance with Alliance standards</p>
+        <p class="rr-prop-label">Entry Requirement</p>
+        <p style="font-size:0.9rem;color:var(--text-body);margin-bottom:10px;">Open enrollment via AI Impact Academy or direct Alliance membership pathway, subject to professional self-identification and adherence to the Three Laws.</p>
+        <p class="rr-prop-label">What You Get</p>
+        <ul>
+          <li>Alliance member certificate</li>
+          <li>Access to the full 50 Principles framework</li>
+          <li>SOP library — AI policies, governance templates, compliance guides</li>
+          <li>Alliance community forums, updates, and policy alerts</li>
+          <li>Directory listing as an Alliance member</li>
+          <li>Priority access to AI Impact Academy cohorts</li>
+        </ul>
+        <p class="rr-prop-label">What Is Expected of You</p>
+        <ul>
+          <li>AI used legally, ethically, and morally at all times</li>
+          <li>Participation in community accountability (community sessions, peer review)</li>
+          <li>Annual re-commitment to the Three Laws</li>
+          <li>Compliance with all Alliance standards as updated</li>
+        </ul>
       </div>
 
       <div class="rr-club-block">
         <h4>Section 3.2 — The Investment Club</h4>
         <p class="club-what">The capital and deal-flow track of the Alliance — for <strong>accredited and sophisticated investors</strong> participating in AI-driven ventures, real estate syndications, and the Pure Expertz investment ecosystem under the Alliance's ethical framework.</p>
-        <p><strong>Entry:</strong> Investment Club membership verification required. Accredited/sophisticated investor status or participation in a qualifying investment track.</p>
-        <p><strong>Benefits:</strong> All Strong Humans Club benefits · Alliance deal-flow portal · Investment opportunity notifications · Investor network calls &amp; due diligence reviews · Investor-only Alliance events</p>
-        <p><strong>Obligations:</strong> All Strong Humans Club standards · Full securities law compliance · Disclosure of interest in any Alliance-presented investment · No unvetted opportunity promotion · Annual investor re-commitment</p>
+        <p class="rr-prop-label">Entry Requirement</p>
+        <p style="font-size:0.9rem;color:var(--text-body);margin-bottom:10px;">Investment Club membership verification required. Accredited or sophisticated investor status, or participation in a qualifying investment track.</p>
+        <p class="rr-prop-label">What You Get</p>
+        <ul>
+          <li>All Strong Humans Club benefits, plus:</li>
+          <li>Access to the Alliance deal-flow portal</li>
+          <li>Investment opportunity notifications (syndications, private placements, venture rounds)</li>
+          <li>Participation in investor network calls and due diligence reviews</li>
+          <li>Entry to investor-only Alliance events</li>
+        </ul>
+        <p class="rr-prop-label">What Is Expected of You</p>
+        <ul>
+          <li>All Strong Humans Club standards, plus:</li>
+          <li>Full compliance with applicable securities laws</li>
+          <li>Disclosure of interest in any investment presented through the Alliance</li>
+          <li>No promoting or presenting unvetted investment opportunities within Alliance spaces</li>
+          <li>Annual investor re-commitment and status verification</li>
+        </ul>
       </div>
 
       <div class="rr-club-block">
         <h4>Section 3.3 — The Polish-American Business and Investment Club</h4>
         <p class="club-what">A cultural-community track of the Alliance, organized around the <strong>Polish-American business and professional community</strong>. Operates under the same Three Laws and Alliance standards, with programming, events, and resources in English and Polish where applicable.</p>
-        <p><strong>Entry:</strong> Self-identification as a member of the Polish-American business or professional community, plus standard Alliance member commitments.</p>
-        <p><strong>Benefits:</strong> All Strong Humans Club benefits · Cultural-context programming (EN &amp; PL) · Polish-American business and investment community connection</p>
-        <p><strong>Obligations:</strong> All Strong Humans Club standards · Active community-relevant programming participation · Adherence to Three Laws</p>
+        <p class="rr-prop-label">Entry Requirement</p>
+        <p style="font-size:0.9rem;color:var(--text-body);margin-bottom:10px;">Self-identification as a member of the Polish-American business or professional community, plus standard Alliance member commitments.</p>
+        <p class="rr-prop-label">What You Get</p>
+        <ul>
+          <li>All Strong Humans Club benefits</li>
+          <li>Cultural-context programming — events, sessions, and materials in English and Polish where applicable</li>
+          <li>Connection to the broader Polish-American business and investment community</li>
+          <li>Access to investment opportunities developed for or with the community</li>
+        </ul>
+        <p class="rr-prop-label">What Is Expected of You</p>
+        <ul>
+          <li>All Strong Humans Club standards</li>
+          <li>Active participation in community-relevant programming</li>
+          <li>Adherence to Alliance Three Laws and operating principles</li>
+        </ul>
       </div>
 
       <div class="rr-section">
@@ -401,22 +562,41 @@
 
       <div class="rr-section">
         <h3>Section 4.1 — Standard Member (Academy Graduate)</h3>
-        <p><strong>Eligibility:</strong> Complete any AI Impact Academy certification (AI Champion, AI Director, or AI Consultant)</p>
-        <p><strong>Benefits:</strong> Full Alliance membership certificate · Complete 50 Principles framework · SOP library · Alliance member designation · Forum access · Member directory listing</p>
+        <p><strong>Eligibility:</strong> Complete any AI Impact Academy certification — AI Champion, AI Director, or AI Consultant.</p>
+        <ul>
+          <li>Full Alliance membership certificate</li>
+          <li>Access to the complete 50 Principles framework</li>
+          <li>SOP library — AI policies, governance templates, compliance guides</li>
+          <li>Alliance member designation on your credential</li>
+          <li>Access to Alliance forums, updates, and policy alerts</li>
+          <li>Listed in the Alliance member directory</li>
+        </ul>
       </div>
 
       <div class="rr-section">
         <h3>Section 4.2 — Founding Member (By Invitation Only)</h3>
         <p><strong>Eligibility:</strong> Extended to recognized practitioners, organizations, and thought leaders who already embody the Three Laws. Not a purchasable tier. Limited to the first 12 members.</p>
-        <p><strong>Benefits:</strong> Seat on the Founding Advisory Council · Speaking position at AI Signature Forums (May, August, November) · Framework cited as an Alliance-recognized model · Co-development of sector-specific governance modules · Cross-promotion across all Pure Expertz channels · Permanent founding designation</p>
-        <p><strong>How to apply:</strong> Request Founding Member Consideration via <a href="https://calendly.com/AndyBabala" target="_blank">calendly.com/AndyBabala</a></p>
+        <ul>
+          <li>Seat on the Founding Advisory Council</li>
+          <li>Speaking position at the AI Signature Forums (May, August, November)</li>
+          <li>Framework cited as an Alliance-recognized model</li>
+          <li>Co-development of sector-specific governance modules</li>
+          <li>Cross-promotion across all Pure Expertz channels and cohorts</li>
+          <li>Permanent founding designation</li>
+        </ul>
+        <p style="font-size:0.88rem;color:var(--text-body);margin-top:10px;"><strong>How to apply:</strong> Request Founding Member Consideration via <a href="https://calendly.com/AndyBabala" target="_blank">calendly.com/AndyBabala</a></p>
       </div>
 
       <div class="rr-section">
         <h3>Section 4.3 — Trusted Service Provider</h3>
         <p><strong>Eligibility:</strong> Active Alliance member in professional track; complete background check verification.</p>
-        <p><strong>Benefits:</strong> All Standard Member benefits · Background check (Month 2) · Trusted Service Provider badge in directory · Referral priority</p>
-        <p><strong>Geographic information (zip code):</strong> Trusted Service Providers provide their primary zip code at registration. <strong>This is informational only.</strong> It allows the Alliance to share area-specific updates and programming. It does <strong>NOT</strong> grant or imply territorial exclusivity. Multiple Trusted Service Providers may serve the same zip code or region.</p>
+        <ul>
+          <li>All Standard Member benefits, plus:</li>
+          <li>Full criminal and background history check (Month 2 of membership)</li>
+          <li>Trusted Service Provider badge displayed in member directory</li>
+          <li>Referral priority within Alliance networks</li>
+        </ul>
+        <p style="font-size:0.88rem;color:var(--text-body);margin-top:12px;padding:12px 16px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--border);"><strong>Geographic information (zip code):</strong> Provided at registration for community connection purposes only. This does <strong>not</strong> grant or imply territorial exclusivity. Multiple Trusted Service Providers may serve the same zip code or region.</p>
       </div>
 
       <div class="rr-section">
@@ -432,7 +612,13 @@
           <li>Disclose any conflicts of interest or events that may reflect on the Alliance brand</li>
           <li>Promptly notify Pure Expertz LLC of any member conduct that may violate Alliance standards</li>
         </ul>
-        <p><strong>A Chapter is NOT:</strong> a separate legal entity, franchise, or licensee · a fee-collecting body in the name of the Alliance · a holder of territorial exclusivity or Alliance IP</p>
+        <p><strong>A Chapter is NOT:</strong></p>
+        <ul>
+          <li>A separate legal entity, franchise, or licensee of Pure Expertz LLC</li>
+          <li>A fee-collecting body in the name of the Alliance</li>
+          <li>A holder of territorial exclusivity or Alliance intellectual property</li>
+          <li>An entity that can represent the Alliance in any binding capacity</li>
+        </ul>
       </div>
 
       <div class="rr-section">
@@ -477,17 +663,31 @@
     <div class="rr-article" id="article-vi">
       <div class="rr-article-label">Article VI</div>
       <h2>Certification Paths</h2>
-      <div class="rr-section">
-        <h3>Section 6.1 — AI Champion</h3>
-        <p>First certification tier · 4-week cohort delivered by certified IC · Demonstrates foundational understanding of the Three Laws and 50 Principles · Qualifies for: Standard Alliance membership, Trusted Service Provider pathway, Chapter Lead consideration</p>
+      <div class="rr-cert-block">
+        <h4>Section 6.1 — AI Champion</h4>
+        <ul>
+          <li><strong>Tier:</strong> First certification level</li>
+          <li><strong>Format:</strong> 4-week cohort delivered by a certified Independent Consultant (IC)</li>
+          <li><strong>Demonstrates:</strong> Foundational understanding of the Three Laws and 50 Principles</li>
+          <li><strong>Qualifies for:</strong> Standard Alliance membership · Trusted Service Provider pathway · Chapter Lead consideration</li>
+        </ul>
       </div>
-      <div class="rr-section">
-        <h3>Section 6.2 — AI Director</h3>
-        <p>Second certification tier · Advanced AI implementation and governance · 3-month engagement track · Demonstrates ability to deploy AI within an organization while maintaining Alliance compliance · Qualifies for: Full Alliance membership, Trusted Service Provider, Chapter Lead consideration</p>
+      <div class="rr-cert-block">
+        <h4>Section 6.2 — AI Director</h4>
+        <ul>
+          <li><strong>Tier:</strong> Second certification level</li>
+          <li><strong>Format:</strong> Advanced AI implementation and governance — 3-month engagement track</li>
+          <li><strong>Demonstrates:</strong> Ability to deploy AI within an organization while maintaining Alliance compliance</li>
+          <li><strong>Qualifies for:</strong> Full Alliance membership · Trusted Service Provider · Chapter Lead consideration</li>
+        </ul>
       </div>
-      <div class="rr-section">
-        <h3>Section 6.3 — AI Consultant</h3>
-        <p>Third certification tier · Full-spectrum AI consulting capability · Business incubator/accelerator track · Qualifies for: Founding Member pathway eligibility, Power Partner tier, Hub Operating License consideration</p>
+      <div class="rr-cert-block">
+        <h4>Section 6.3 — AI Consultant</h4>
+        <ul>
+          <li><strong>Tier:</strong> Third certification level</li>
+          <li><strong>Format:</strong> Full-spectrum AI consulting capability — business incubator/accelerator track</li>
+          <li><strong>Qualifies for:</strong> Founding Member pathway eligibility · Power Partner tier · Hub Operating License consideration</li>
+        </ul>
       </div>
     </div>
 

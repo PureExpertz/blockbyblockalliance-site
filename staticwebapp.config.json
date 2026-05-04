@@ -21,6 +21,16 @@
       "statusCode": 200
     },
     {
+      "route": "/50-principles",
+      "serve": "/50-principles.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/50-principles.html",
+      "serve": "/50-principles.html",
+      "statusCode": 200
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
