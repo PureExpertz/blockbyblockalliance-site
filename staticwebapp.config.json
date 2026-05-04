@@ -11,6 +11,16 @@
       "statusCode": 200
     },
     {
+      "route": "/acknowledge",
+      "serve": "/acknowledge.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/acknowledge.html",
+      "serve": "/acknowledge.html",
+      "statusCode": 200
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200

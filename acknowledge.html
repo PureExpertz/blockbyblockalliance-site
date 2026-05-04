@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Alliance Acknowledgment — Block by Block Alliance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .ack-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      background: var(--navy);
+    }
+
+    .ack-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+      max-width: 680px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .ack-header {
+      background: var(--navy);
+      padding: 32px 40px 28px;
+      text-align: center;
+    }
+    .ack-header .section-label {
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 0.72rem;
+    }
+    .ack-header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 0;
+    }
+
+    .ack-body {
+      padding: 36px 40px;
+    }
+
+    .ack-intro {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .ack-intro a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .ack-intro a:hover { color: var(--gold-dark); }
+
+    /* Three Laws summary */
+    .laws-summary {
+      background: var(--off-white);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+    }
+    .laws-summary-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .law-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .law-row:last-child { border-bottom: none; }
+    .law-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      font-family: 'Inter', sans-serif;
+    }
+    .law-text {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .law-text strong { color: var(--navy); }
+
+    .ack-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      padding: 14px 18px;
+      border-left: 3px solid var(--border);
+      background: var(--off-white);
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Radio choices */
+    .choice-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .choice-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.18s;
+      background: var(--white);
+    }
+    .choice-label:hover {
+      border-color: var(--navy);
+      background: var(--off-white);
+    }
+    .choice-label.selected-agree {
+      border-color: #16a34a;
+      background: #f0fdf4;
+    }
+    .choice-label.selected-concerns {
+      border-color: #b45309;
+      background: #fffbeb;
+    }
+    .choice-label input[type="radio"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: var(--navy);
+      width: 18px;
+      height: 18px;
+    }
+    .choice-text {
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+    .choice-text strong { display: block; font-size: 0.95rem; margin-bottom: 2px; color: var(--navy); }
+    .choice-text span { color: var(--muted); font-size: 0.84rem; }
+
+    /* Submit button */
+    .ack-submit {
+      width: 100%;
+      padding: 15px 28px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .ack-submit:hover { background: var(--navy-light); transform: translateY(-1px); }
+    .ack-submit:disabled {
+      background: var(--border);
+      color: var(--muted);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Outcome panels */
+    .outcome {
+      display: none;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-top: 0;
+      text-align: center;
+    }
+    .outcome.agree {
+      background: #f0fdf4;
+      border: 2px solid #16a34a;
+    }
+    .outcome.concerns {
+      background: #fffbeb;
+      border: 2px solid #b45309;
+    }
+    .outcome-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .outcome h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .outcome.agree h3 { color: #15803d; }
+    .outcome.concerns h3 { color: #92400e; }
+    .outcome p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .outcome .outcome-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .outcome.agree .outcome-btn {
+      background: #16a34a;
+      color: white;
+    }
+    .outcome.agree .outcome-btn:hover { background: #15803d; }
+    .outcome.concerns .outcome-btn {
+      background: #b45309;
+      color: white;
+    }
+    .outcome.concerns .outcome-btn:hover { background: #92400e; }
+
+    .ack-footer {
+      padding: 20px 40px 28px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .ack-footer a { color: var(--muted); text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .ack-header, .ack-body, .ack-footer { padding-left: 24px; padding-right: 24px; }
+      .ack-header h1 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ack-wrap">
+  <div class="ack-card">
+
+    <!-- HEADER -->
+    <div class="ack-header">
+      <div class="section-label">Block by Block Alliance · Required Step</div>
+      <h1>Review &amp; Acknowledge<br />the Alliance Framework</h1>
+    </div>
+
+    <!-- BODY -->
+    <div class="ack-body" id="ack-form-section">
+
+      <p class="ack-intro">
+        Before we go further, every person who engages with Andy Babala and the Pure Expertz ecosystem is asked to read and acknowledge the
+        <a href="/rules.html" target="_blank">Block by Block Alliance Rules &amp; Regulations v1.1 ↗</a>.
+        This is not a legal formality — it is a filter for mission alignment.
+      </p>
+
+      <!-- THREE LAWS SUMMARY -->
+      <div class="laws-summary">
+        <div class="laws-summary-label">The Three Laws — Every Member Agrees</div>
+        <div class="law-row">
+          <div class="law-num">1</div>
+          <div class="law-text"><strong>Use AI Legally</strong> No automation of illegal activity. No facilitation of fraud. No use of AI to deceive, manipulate, or harm.</div>
+        </div>
+        <div class="law-row">
+          <div class="law-num">2</div>
+          <div class="law-text"><strong>Use AI Ethically</strong> Respect human dignity, privacy, and autonomy. Be honest about what AI does and does not do.</div>
+        </div>
+        <div class="law-row">
+          <div class="law-num">3</div>
+          <div class="law-text"><strong>Use AI Morally</strong> Build systems that make humans stronger, not dependent. Create value for all stakeholders.</div>
+        </div>
+      </div>
+
+      <div class="ack-note">
+        Please read the <a href="/rules.html" target="_blank" style="color:var(--navy);font-weight:600;">full Rules &amp; Regulations</a> before making your selection. The document covers membership tiers, enforcement standards, certification paths, and governing law (State of Illinois). It takes about 5 minutes to read.
+      </div>
+
+      <!-- CHOICE -->
+      <div class="choice-group" id="choiceGroup">
+        <label class="choice-label" id="labelAgree">
+          <input type="radio" name="ack_choice" value="agree" onchange="handleChoice(this)" />
+          <div class="choice-text">
+            <strong>I have read the Rules &amp; Regulations and I agree.</strong>
+            <span>I understand the Three Laws, the membership framework, and the enforcement standards. I am ready to proceed.</span>
+          </div>
+        </label>
+        <label class="choice-label" id="labelConcerns">
+          <input type="radio" name="ack_choice" value="concerns" onchange="handleChoice(this)" />
+          <div class="choice-text">
+            <strong>I have concerns or questions about the content.</strong>
+            <span>Something in the framework does not sit right with me, or I would like to discuss before committing.</span>
+          </div>
+        </label>
+      </div>
+
+      <button class="ack-submit" id="submitBtn" disabled onclick="submitAck()">
+        Continue →
+      </button>
+
+    </div><!-- /ack-body -->
+
+    <!-- OUTCOME: AGREE -->
+    <div class="outcome agree" id="outcome-agree">
+      <div class="ack-body" style="text-align:center;padding-top:28px;">
+        <div class="outcome-icon">✅</div>
+        <h3>Welcome to the Alliance.</h3>
+        <p>
+          Thank you for taking the time to review the framework. You are now ready to move forward.
+          Use the link below to schedule your next step with Andy.
+        </p>
+        <a href="https://calendly.com/andybabala/25min" class="outcome-btn" target="_blank">
+          Book a Call with Andy →
+        </a>
+        <p style="margin-top:16px;font-size:0.8rem;color:var(--muted);">
+          If you were referred here in connection with a specific event or program,
+          return to that link to complete your registration.
+        </p>
+      </div>
+    </div>
+
+    <!-- OUTCOME: CONCERNS -->
+    <div class="outcome concerns" id="outcome-concerns">
+      <div class="ack-body" style="text-align:center;padding-top:28px;">
+        <div class="outcome-icon">🤝</div>
+        <h3>Thank you for your honesty.</h3>
+        <p>
+          The Alliance framework is foundational to everything we build together.
+          If something in it does not align with how you operate, this may not be the right fit right now —
+          and that is completely okay.
+        </p>
+        <p>
+          If your concern is a specific question rather than a fundamental objection,
+          you are welcome to reach out directly before proceeding.
+        </p>
+        <a href="mailto:support@pureexpertz.com" class="outcome-btn">
+          Send a Question →
+        </a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="ack-footer">
+      <a href="/" >← Back to Block by Block Alliance</a>
+      &nbsp;·&nbsp;
+      <a href="/rules.html">Read the Full Rules &amp; Regulations</a>
+      &nbsp;·&nbsp;
+      <a href="https://pureexpertz.pro">Pure Expertz™</a>
+    </div>
+
+  </div><!-- /ack-card -->
+</div>
+
+<script>
+  var chosen = null;
+
+  function handleChoice(radio) {
+    chosen = radio.value;
+
+    var labelAgree    = document.getElementById('labelAgree');
+    var labelConcerns = document.getElementById('labelConcerns');
+    var submitBtn     = document.getElementById('submitBtn');
+
+    // Reset both
+    labelAgree.classList.remove('selected-agree', 'selected-concerns');
+    labelConcerns.classList.remove('selected-agree', 'selected-concerns');
+
+    if (chosen === 'agree') {
+      labelAgree.classList.add('selected-agree');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'I Agree — Continue →';
+    } else {
+      labelConcerns.classList.add('selected-concerns');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit My Response →';
+    }
+  }
+
+  function submitAck() {
+    if (!chosen) return;
+
+    // Hide the form section
+    document.getElementById('ack-form-section').style.display = 'none';
+
+    // Show the appropriate outcome
+    if (chosen === 'agree') {
+      document.getElementById('outcome-agree').style.display = 'block';
+    } else {
+      document.getElementById('outcome-concerns').style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
