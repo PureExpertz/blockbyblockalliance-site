@@ -192,52 +192,139 @@
     /* Outcome panels */
     .outcome {
       display: none;
-      border-radius: 12px;
-      padding: 28px 32px;
       margin-top: 0;
-      text-align: center;
+      text-align: left;
     }
+    /* AGREE outcome — full-width inside card, no colored border */
     .outcome.agree {
-      background: #f0fdf4;
-      border: 2px solid #16a34a;
+      background: var(--white);
     }
+    /* Concerns stays simple */
     .outcome.concerns {
       background: #fffbeb;
       border: 2px solid #b45309;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 0 32px 28px;
+      text-align: center;
     }
-    .outcome-icon { font-size: 2.2rem; margin-bottom: 12px; }
-    .outcome h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .outcome.agree h3 { color: #15803d; }
-    .outcome.concerns h3 { color: #92400e; }
-    .outcome p {
-      font-size: 0.9rem;
-      color: var(--text-body);
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-    .outcome .outcome-btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .outcome.agree .outcome-btn {
-      background: #16a34a;
-      color: white;
-    }
-    .outcome.agree .outcome-btn:hover { background: #15803d; }
+    .outcome.concerns h3 { color: #92400e; font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
+    .outcome.concerns p { font-size: 0.9rem; color: var(--text-body); line-height: 1.65; margin-bottom: 18px; }
     .outcome.concerns .outcome-btn {
-      background: #b45309;
-      color: white;
+      display: inline-block; padding: 12px 28px; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 700; text-decoration: none;
+      background: #b45309; color: white; transition: all 0.2s;
     }
     .outcome.concerns .outcome-btn:hover { background: #92400e; }
+
+    /* AGREE inner layout */
+    .agree-hero {
+      background: var(--navy);
+      padding: 28px 40px 24px;
+      text-align: center;
+    }
+    .agree-hero .agree-icon { font-size: 2rem; margin-bottom: 8px; }
+    .agree-hero h3 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.3rem; font-weight: 900;
+      color: #fff; margin-bottom: 6px;
+    }
+    .agree-hero p { color: #9ca3af; font-size: 0.85rem; }
+
+    .agree-body { padding: 28px 36px; }
+
+    .agree-section-label {
+      font-size: 0.67rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.13em; color: #6b7280; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .agree-section { margin-bottom: 32px; }
+
+    /* Zoom cards */
+    .zoom-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      margin-bottom: 8px;
+    }
+    .zoom-card {
+      display: block; text-decoration: none;
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 12px; text-align: center;
+      transition: all 0.18s;
+    }
+    .zoom-card:hover { border-color: var(--navy); background: #e8ecf4; transform: translateY(-2px); }
+    .zoom-card .zc-day { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-dark); margin-bottom: 4px; }
+    .zoom-card .zc-title { font-size: 0.78rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 4px; }
+    .zoom-card .zc-time { font-size: 0.7rem; color: var(--muted); }
+    .zoom-card .zc-cta { font-size: 0.68rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; display: block; }
+    .zoom-ooh-note { font-size: 0.76rem; color: var(--muted); line-height: 1.55; }
+    .zoom-ooh-note a { color: var(--navy); font-weight: 600; }
+
+    /* Event card */
+    .event-card {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a2340 100%);
+      border-radius: 12px; padding: 22px 24px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .event-card-text { flex: 1; }
+    .event-card-badge {
+      font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--gold);
+      background: rgba(212,168,67,0.12); border: 1px solid rgba(212,168,67,0.3);
+      padding: 3px 10px; border-radius: 100px; display: inline-block; margin-bottom: 8px;
+    }
+    .event-card h4 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem; font-weight: 900; color: #fff;
+      line-height: 1.25; margin-bottom: 6px;
+    }
+    .event-card p { font-size: 0.8rem; color: #9ca3af; margin-bottom: 12px; line-height: 1.5; }
+    .event-register-btn {
+      display: inline-block; padding: 10px 22px;
+      background: linear-gradient(135deg, var(--gold), #b8860b);
+      color: #fff; font-size: 0.82rem; font-weight: 700;
+      border-radius: 7px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .event-register-btn:hover { opacity: 0.88; }
+
+    /* Partner card */
+    .partner-card {
+      background: #f8f9ff; border: 1px solid #dde2f0;
+      border-radius: 12px; padding: 20px 22px;
+    }
+    .partner-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .partner-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    .partner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .partner-btn-primary {
+      display: inline-block; padding: 10px 20px;
+      background: var(--navy); color: #fff;
+      font-size: 0.82rem; font-weight: 700;
+      border-radius: 8px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .partner-btn-primary:hover { opacity: 0.85; }
+    .partner-btn-ghost {
+      display: inline-block; padding: 10px 20px;
+      border: 1.5px solid var(--navy); color: var(--navy);
+      font-size: 0.82rem; font-weight: 700;
+      border-radius: 8px; text-decoration: none; transition: all 0.2s;
+    }
+    .partner-btn-ghost:hover { background: var(--navy); color: #fff; }
+
+    /* 1-on-1 bottom strip */
+    .agree-1on1 {
+      border-top: 1px solid var(--border);
+      padding: 18px 36px 24px;
+      text-align: center;
+    }
+    .agree-1on1 p { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
+    .agree-1on1 a { font-size: 0.82rem; color: var(--navy); font-weight: 600; text-decoration: underline; }
+    .agree-1on1 a:hover { color: var(--gold-dark); }
+
+    @media (max-width: 560px) {
+      .zoom-grid { grid-template-columns: 1fr; }
+      .event-card { flex-direction: column; }
+      .agree-body { padding: 20px; }
+      .agree-1on1 { padding: 16px 20px 20px; }
+    }
 
     .ack-footer {
       padding: 20px 40px 28px;
@@ -321,22 +408,78 @@
 
     <!-- OUTCOME: AGREE -->
     <div class="outcome agree" id="outcome-agree">
-      <div class="ack-body" style="text-align:center;padding-top:28px;">
-        <div class="outcome-icon">✅</div>
-        <h3>Welcome to the Alliance.</h3>
-        <p>
-          Thank you for taking the time to review the framework. You are now ready to move forward.
-          Use the link below to schedule your next step with Andy.
-        </p>
-        <a href="https://calendly.com/andybabala/25min" class="outcome-btn" target="_blank">
-          Book a Call with Andy →
-        </a>
-        <p style="margin-top:16px;font-size:0.8rem;color:var(--muted);">
-          If you were referred here in connection with a specific event or program,
-          return to that link to complete your registration.
-        </p>
+
+      <!-- Hero welcome band -->
+      <div class="agree-hero">
+        <div class="agree-icon">✅</div>
+        <h3>You're in. Welcome to the Alliance.</h3>
+        <p>Here's how to get started immediately.</p>
       </div>
-    </div>
+
+      <div class="agree-body">
+
+        <!-- ZOOM SESSIONS -->
+        <div class="agree-section">
+          <div class="agree-section-label">📅 Join a Live Session This Week</div>
+          <div class="zoom-grid">
+            <a href="https://us06web.zoom.us/meeting/register/ODp8nhwFS-aCM6WvZI5W-w" target="_blank" class="zoom-card">
+              <div class="zc-day">Tuesday</div>
+              <div class="zc-title">Alliance Walk-and-Talk</div>
+              <div class="zc-time">11:00 AM CT · Weekly</div>
+              <span class="zc-cta">Register →</span>
+            </a>
+            <a href="https://us06web.zoom.us/meeting/register/O0BMMA3RR0-a2Atqgd8DGw" target="_blank" class="zoom-card">
+              <div class="zc-day">Thursday</div>
+              <div class="zc-title">Speakers, VC &amp; PE — Thought Leadership</div>
+              <div class="zc-time">11:30 AM CT · Weekly</div>
+              <span class="zc-cta">Register →</span>
+            </a>
+            <a href="https://us06web.zoom.us/meeting/register/RCaazeizRVyxkNDUOaUxHA" target="_blank" class="zoom-card">
+              <div class="zc-day">Saturday</div>
+              <div class="zc-title">Pure Expertz Weekly Updates</div>
+              <div class="zc-time">Weekly · All Members</div>
+              <span class="zc-cta">Register →</span>
+            </a>
+          </div>
+          <p class="zoom-ooh-note">Open Office Hours run Tue/Wed/Thu 2–4 PM CT on OBV.io — access through <a href="https://pureexpertz.ai" target="_blank">pureexpertz.ai</a></p>
+        </div>
+
+        <!-- AI IMPACT FORUM 2026 -->
+        <div class="agree-section">
+          <div class="agree-section-label">🎯 The Next Big Event</div>
+          <div class="event-card">
+            <div class="event-card-text">
+              <div class="event-card-badge">May 14–16, 2026</div>
+              <h4>AI Impact Forum 2026</h4>
+              <p>Three days of AI education, live workshops, and community — built for business owners, professionals, and community leaders. In-person + virtual. Seats are limited.</p>
+              <a href="https://pureexpertz.ai/ai2026" target="_blank" class="event-register-btn">Register Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER PROGRAM -->
+        <div class="agree-section">
+          <div class="agree-section-label">💰 Earn 50% — Become a Partner</div>
+          <div class="partner-card">
+            <h4>Share the Forum. Earn on Every Registration.</h4>
+            <p>Generate your unique UTM tracking link in under 60 seconds. Every registration you drive earns you 50% — General Admission ($27/mo → $13.50) or VIP ($297/mo → $148.50). No cap. Paid within 7 days.<br>
+            Hosting a watching party for your team or office? <strong>Even better</strong> — download the flyer below and invite your network directly.</p>
+            <div class="partner-actions">
+              <a href="https://pureexpertz.ai/ai2026/partner/" target="_blank" class="partner-btn-primary">Create My Partner Link →</a>
+              <a href="https://pureexpertz.pro/assets/images/ai-impact-forum-poster.png" target="_blank" class="partner-btn-ghost">📥 Download the Flyer</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /agree-body -->
+
+      <!-- 1-on-1 at the very bottom -->
+      <div class="agree-1on1">
+        <p>Need a personal conversation before your next step?</p>
+        <a href="https://calendly.com/andybabala/25min" target="_blank">Book a 1-on-1 with Andy →</a>
+      </div>
+
+    </div><!-- /outcome-agree -->
 
     <!-- OUTCOME: CONCERNS -->
     <div class="outcome concerns" id="outcome-concerns">
@@ -364,7 +507,7 @@
       &nbsp;·&nbsp;
       <a href="/rules.html">Read the Full Rules &amp; Regulations</a>
       &nbsp;·&nbsp;
-      <a href="https://pureexpertz.pro">Pure Expertz™</a>
+      <a href="https://pureexpertz.ai">Pure Expertz™</a>
     </div>
 
   </div><!-- /ack-card -->
