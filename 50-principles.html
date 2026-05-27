@@ -304,6 +304,51 @@
     }
     .cta-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
+    /* ── DOWNLOAD CTA BANDS ── */
+    .download-band {
+      background: var(--navy);
+      padding: 28px 24px 32px;
+      text-align: center;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .download-block {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin: 0 0 32px;
+      text-align: center;
+    }
+    .download-block .dl-eyebrow {
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .btn-dl {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-dl:hover { background: var(--gold-light); }
+    .btn-dl-sm {
+      display: block;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: color 0.2s;
+      margin-top: 14px;
+    }
+    .btn-dl-sm:hover { color: var(--gold); }
+
     /* ── PRINT STYLES ── */
     @media print {
       .print-bar, .academy-cta { display: none !important; }
@@ -323,7 +368,7 @@
 <div class="print-bar">
   <a href="/rules.html" class="back">← Block by Block Alliance Rules &amp; Regulations</a>
   <div class="print-actions">
-    <a href="https://pureexpertz.pro/may2026" class="cta-academy">AI Impact Academy →</a>
+    <a href="https://community.pureexpertz.ai" class="cta-academy">Join the Community →</a>
     <button class="btn-print" onclick="window.print()">⬇ Save / Print PDF</button>
   </div>
 </div>
@@ -343,6 +388,12 @@
     <span>May 2026</span>
     <span>Free to share with attribution</span>
   </div>
+</div>
+
+<!-- DOWNLOAD CTAs — TOP -->
+<div class="download-band">
+  <a href="/50-principles.pdf" download class="btn-dl">Download the Full Handbook (PDF · 17 MB)</a>
+  <a href="/50-principles-quick.pdf" download class="btn-dl-sm">Or grab the 3-page Quick Reference (96 KB)</a>
 </div>
 
 <!-- INTRO -->
@@ -780,15 +831,22 @@
     </div>
   </div>
 
-  <!-- ACADEMY CTA -->
+  <!-- DOWNLOAD CTAs — BOTTOM -->
+  <div class="download-block">
+    <div class="dl-eyebrow">Take it with you</div>
+    <a href="/50-principles.pdf" download class="btn-dl">Download the Full Handbook (PDF · 17 MB)</a>
+    <a href="/50-principles-quick.pdf" download class="btn-dl-sm">Or grab the 3-page Quick Reference (96 KB)</a>
+  </div>
+
+  <!-- COMMUNITY CTA -->
   <div class="academy-cta">
-    <h3>Ready to put these principles into practice?</h3>
+    <h3>If you want to do this work alongside other humans doing the same, we keep a place open for you.</h3>
     <p>
-      The AI Impact Academy is where you go from knowing the framework to living it.<br />
-      Three certification tracks. Community accountability. Real implementation support.
+      The community is free to join. Bring your questions, your work, your edge cases.<br />
+      The principles are the framework. The community is where you put them into practice.
     </p>
     <div class="cta-group">
-      <a href="https://pureexpertz.pro/may2026" class="cta-primary">Register for the AI Impact Academy →</a>
+      <a href="https://community.pureexpertz.ai" class="cta-primary">Join the Community →</a>
       <a href="https://blockbyblockalliance.com/acknowledge" class="cta-ghost">Sign the Alliance →</a>
     </div>
     <p style="margin-top:20px;font-size:0.75rem;color:rgba(255,255,255,0.35);">
