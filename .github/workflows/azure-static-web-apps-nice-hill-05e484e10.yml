@@ -30,7 +30,8 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist" # npm run build copies all files here
+          output_location: "" # Deploy all static files directly from root
+          skip_app_build: true # No Node build needed — pure static site
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:

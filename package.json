@@ -1,7 +1,0 @@
-{
-  "name": "blockbyblockalliance-site",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "mkdir -p dist && cp *.html *.css *.js *.png *.pdf staticwebapp.config.json dist/"
-  }
-}

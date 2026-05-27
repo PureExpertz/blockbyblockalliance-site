@@ -5,34 +5,17 @@
       "rewrite": "/rules.html"
     },
     {
-      "route": "/rules.html",
-      "rewrite": "/rules.html"
-    },
-    {
       "route": "/acknowledge",
-      "rewrite": "/acknowledge.html"
-    },
-    {
-      "route": "/acknowledge.html",
       "rewrite": "/acknowledge.html"
     },
     {
       "route": "/50-principles",
       "rewrite": "/50-principles.html"
-    },
-    {
-      "route": "/50-principles.html",
-      "rewrite": "/50-principles.html"
-    },
-    {
-      "route": "/*",
-      "rewrite": "/index.html"
     }
   ],
-  "responseOverrides": {
-    "404": {
-      "rewrite": "/index.html"
-    }
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/*.html", "/*.css", "/*.js", "/*.png", "/*.pdf", "/*.ico", "/*.json", "/*.txt"]
   },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
