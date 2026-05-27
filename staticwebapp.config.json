@@ -11,12 +11,12 @@
     {
       "route": "/50-principles",
       "rewrite": "/50-principles.html"
-    },
-    {
-      "route": "/*",
-      "rewrite": "/index.html"
     }
   ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/*.html", "/*.css", "/*.js", "/*.png", "/*.pdf", "/*.ico", "/*.svg", "/*.json", "/*.txt", "/*.woff", "/*.woff2"]
+  },
   "responseOverrides": {
     "404": {
       "rewrite": "/index.html",
