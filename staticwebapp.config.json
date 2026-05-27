@@ -2,44 +2,36 @@
   "routes": [
     {
       "route": "/rules",
-      "rewrite": "/rules.html",
-      "statusCode": 200
+      "rewrite": "/rules.html"
     },
     {
       "route": "/rules.html",
-      "rewrite": "/rules.html",
-      "statusCode": 200
+      "rewrite": "/rules.html"
     },
     {
       "route": "/acknowledge",
-      "rewrite": "/acknowledge.html",
-      "statusCode": 200
+      "rewrite": "/acknowledge.html"
     },
     {
       "route": "/acknowledge.html",
-      "rewrite": "/acknowledge.html",
-      "statusCode": 200
+      "rewrite": "/acknowledge.html"
     },
     {
       "route": "/50-principles",
-      "rewrite": "/50-principles.html",
-      "statusCode": 200
+      "rewrite": "/50-principles.html"
     },
     {
       "route": "/50-principles.html",
-      "rewrite": "/50-principles.html",
-      "statusCode": 200
+      "rewrite": "/50-principles.html"
     },
     {
       "route": "/*",
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     }
   ],
   "responseOverrides": {
     "404": {
-      "rewrite": "/index.html",
-      "statusCode": 200
+      "rewrite": "/index.html"
     }
   },
   "globalHeaders": {
