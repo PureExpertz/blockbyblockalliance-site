@@ -21,16 +21,6 @@
       "statusCode": 200
     },
     {
-      "route": "/50-principles.pdf",
-      "serve": "/50-principles.pdf",
-      "statusCode": 200
-    },
-    {
-      "route": "/50-principles-quick.pdf",
-      "serve": "/50-principles-quick.pdf",
-      "statusCode": 200
-    },
-    {
       "route": "/50-principles",
       "serve": "/50-principles.html",
       "statusCode": 200
