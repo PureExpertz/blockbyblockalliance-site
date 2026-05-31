@@ -3,879 +3,514 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Block by Block AI Safety & Security Alliance — Rules & Regulations Version 1.1. Effective May 1, 2026. Issued by Pure Expertz LLC. Governing Law: State of Illinois." />
-  <meta name="keywords" content="AI governance, AI safety rules, AI ethics regulations, Pure Expertz, Block by Block Alliance, AI compliance Illinois" />
-  <title>Rules &amp; Regulations v1.1 | Block by Block AI Safety &amp; Security Alliance</title>
+  <meta name="description" content="Block by Block AI Safety & Security Alliance — Rules & Regulations v1.6. Effective June 1, 2026. Issued by Pure Expertz™ LLC. Governing Law: State of Illinois." />
+  <title>Rules &amp; Regulations v1.6 | Block by Block AI Safety &amp; Security Alliance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
-    /* R&R DOCUMENT STYLES */
-    .rr-doc-nav {
-      background: var(--navy);
-      padding: 12px 0;
-      border-bottom: 2px solid var(--gold);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #070B17; --navy-mid: #0D1422; --navy-card: #111827;
+      --gold: #C9A84C; --gold-light: #E4C97A; --white: #F5F0E8;
+      --muted: #6B7B9A; --cyan: #00C8E0;
     }
-    .rr-doc-nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .rr-doc-nav a { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
-    .rr-doc-nav a:hover { color: var(--gold); }
-    .rr-doc-nav .nav-home { font-weight: 600; color: var(--white); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--navy); color: var(--white); font-family: 'Inter', sans-serif; min-height: 100vh; }
 
-    .rr-doc-hero {
-      background: var(--navy);
-      padding: 64px 0 56px;
-    }
-    .rr-doc-hero h1 {
-      color: var(--white);
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      margin-bottom: 12px;
-    }
-    .rr-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 20px 0 0;
-    }
-    .rr-meta-item {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
-      font-family: 'Inter', sans-serif;
-    }
-    .rr-meta-item strong { color: var(--gold); }
+    /* NAV */
+    .top-nav { background: rgba(7,11,23,0.97); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-hex { font-size: 1.3rem; color: var(--gold); }
+    .nav-name { font-size: 0.82rem; font-weight: 700; color: var(--white); letter-spacing: 0.04em; line-height: 1.2; }
+    .nav-name span { display: block; font-weight: 400; color: var(--muted); font-size: 0.72rem; }
+    .nav-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 0.8rem; text-decoration: none; transition: color 0.15s; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-    .rr-toc {
-      background: var(--off-white);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 0;
-    }
-    .rr-toc h4 {
-      margin-bottom: 14px;
-      font-size: 0.75rem;
-      color: var(--gold);
-    }
-    .rr-toc-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px 16px;
-    }
-    .rr-toc-grid a {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      display: block;
-      padding: 4px 0;
-    }
-    .rr-toc-grid a:hover { color: var(--navy); }
+    /* PAGE HEADER */
+    .page-header { background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 32px 20px; }
+    .header-inner { max-width: 1100px; margin: 0 auto; }
+    .doc-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.35); border-radius: 20px; padding: 4px 14px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .doc-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+    .page-header h1 { font-family: 'Merriweather', Georgia, serif; font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 10px; }
+    .doc-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; }
+    .doc-meta strong { color: rgba(245,240,232,0.7); }
+    .download-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .dl-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border-radius: 7px; font-size: 0.8rem; font-weight: 700; text-decoration: none; transition: all 0.15s; border: 1px solid transparent; }
+    .dl-btn-pdf { background: var(--gold); color: #000; }
+    .dl-btn-pdf:hover { background: var(--gold-light); }
+    .dl-btn-docx { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.2); }
+    .dl-btn-docx:hover { border-color: var(--gold); color: var(--gold); }
+    .dl-btn-ack { background: rgba(0,200,224,0.1); color: var(--cyan); border-color: rgba(0,200,224,0.35); }
+    .dl-btn-ack:hover { background: rgba(0,200,224,0.2); }
 
-    .rr-body {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 64px 24px 96px;
-    }
+    /* LAYOUT */
+    .main-layout { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; display: grid; grid-template-columns: 220px 1fr; gap: 28px; }
+    @media (max-width: 768px) { .main-layout { grid-template-columns: 1fr; } .toc-sidebar { display: none; } }
 
-    .rr-preamble {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      margin-bottom: 56px;
-      font-size: 1rem;
-      color: var(--text-body);
-      line-height: 1.8;
-    }
+    /* TOC */
+    .toc-sidebar { position: sticky; top: 60px; height: fit-content; background: var(--navy-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; font-size: 0.74rem; }
+    .toc-sidebar h4 { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .toc-sidebar a { display: block; color: rgba(245,240,232,0.6); text-decoration: none; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.12s; line-height: 1.4; }
+    .toc-sidebar a:hover { color: var(--gold); }
+    .toc-sidebar a.new-item { color: rgba(0,200,224,0.85); }
+    .toc-sidebar a.new-item::after { content: ' ★'; font-size: 0.65em; }
 
-    .rr-article {
-      display: block;
-      margin-bottom: 56px;
-      scroll-margin-top: 80px;
-      padding: 0;
-      background: none;
-      border: none;
-      border-radius: 0;
-      gap: 0;
-    }
-    .rr-article-label {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--gold);
-      font-family: 'Inter', sans-serif;
-      margin-bottom: 6px;
-    }
-    .rr-article h2 {
-      display: block;
-      font-size: 1.5rem;
-      margin-bottom: 24px;
-      padding-bottom: 14px;
-      border-bottom: 2px solid var(--border);
-    }
-    .rr-section {
-      margin-bottom: 32px;
-    }
-    .rr-section h3 {
-      font-size: 1rem;
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      margin-bottom: 10px;
-      padding: 10px 16px;
-      background: var(--off-white);
-      border-radius: var(--radius);
-      border-left: 3px solid var(--navy);
-    }
-    .rr-section p { margin-bottom: 12px; font-size: 0.95rem; }
-    .rr-section ul, .rr-section ol {
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-    .rr-section li { font-size: 0.93rem; color: var(--text-body); }
+    /* DOCUMENT VIEWER */
+    .doc-viewer { background: #FAFAF7; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; }
+    .doc-viewer-bar { background: #F0EDE6; border-bottom: 1px solid #D8D4CC; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .doc-viewer-bar .dv-title { font-size: 0.72rem; font-weight: 700; color: #3A3530; letter-spacing: 0.02em; }
+    .doc-viewer-bar .dv-ver { font-size: 0.68rem; color: #7A6E60; font-weight: 500; }
+    .doc-scroll { height: 72vh; overflow-y: auto; padding: 36px 44px 48px; font-family: 'Merriweather', Georgia, 'Times New Roman', serif; font-size: 0.88rem; line-height: 1.85; color: #2A2520; scroll-behavior: smooth; }
+    @media (max-width: 600px) { .doc-scroll { padding: 20px; } }
 
-    blockquote.rr-quote {
-      background: var(--navy);
-      color: var(--white);
-      padding: 24px 32px;
-      border-radius: var(--radius);
-      font-family: 'Merriweather', serif;
-      font-style: italic;
-      font-size: 1rem;
-      margin: 16px 0;
-      border: none;
-    }
-    blockquote.rr-quote cite {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.78rem;
-      color: var(--gold);
-      font-style: normal;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    /* Document typography */
+    .doc-scroll .doc-main-title { font-size: 1.1rem; font-weight: 700; color: #1A1510; text-align: center; border-bottom: 2px solid #C9A84C; padding-bottom: 16px; margin-bottom: 8px; font-family: 'Merriweather', serif; }
+    .doc-scroll .doc-head-meta { text-align: center; font-size: 0.78rem; color: #6B6258; margin-bottom: 6px; font-family: 'Inter', sans-serif; }
+    .doc-scroll .doc-supersedes { text-align: center; font-size: 0.75rem; color: #8B7E72; font-style: italic; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #E0DAD2; }
+    .doc-scroll h2 { font-size: 0.92rem; font-weight: 700; color: #1A1510; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #D4CEC7; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'Inter', sans-serif; }
+    .doc-scroll h3 { font-size: 0.88rem; font-weight: 700; color: #2A2520; margin: 20px 0 8px; font-family: 'Inter', sans-serif; }
+    .new-tag { display: inline-block; background: #E8F5E8; color: #2D6A2D; border: 1px solid #B8D8B8; border-radius: 3px; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; padding: 1px 6px; margin-left: 8px; vertical-align: middle; font-family: 'Inter', sans-serif; text-transform: uppercase; }
+    .doc-scroll p { margin-bottom: 12px; }
+    .doc-scroll ul, .doc-scroll ol { margin: 8px 0 12px 20px; }
+    .doc-scroll li { margin-bottom: 6px; }
+    .doc-scroll strong { color: #1A1510; font-weight: 700; }
+    .doc-scroll hr { border: none; border-top: 1px solid #DDD8D0; margin: 28px 0; }
+    .laws-box { background: #F5F0E8; border-left: 4px solid #C9A84C; border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 14px 0; }
+    .laws-box p { margin: 0; font-style: italic; color: #3A3020; }
+    .warn-box { background: #FFF8F0; border-left: 4px solid #E07A30; border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 14px 0; }
+    .crit-box { background: #FFF5F5; border: 1px solid #E0C0C0; border-left: 4px solid #C04040; border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 14px 0; }
+    .crit-box strong { color: #8B1010; }
+    .eg-box { background: #F0F4F8; border-radius: 5px; padding: 12px 16px; margin: 10px 0; font-size: 0.84rem; color: #3A4050; }
+    .doc-scroll table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.79rem; font-family: 'Inter', sans-serif; }
+    .doc-scroll table th { background: #E8E4DC; color: #2A2520; font-weight: 700; padding: 8px 12px; text-align: left; border: 1px solid #CCC8C0; }
+    .doc-scroll table td { padding: 7px 12px; border: 1px solid #DEDAD2; vertical-align: top; color: #3A3530; }
+    .doc-scroll table tr:nth-child(even) td { background: #F5F2EC; }
+    .doc-footer { text-align: center; font-size: 0.75rem; color: #8B7E72; font-style: italic; margin-top: 36px; padding-top: 20px; border-top: 1px solid #E0DAD2; font-family: 'Inter', sans-serif; }
+    .doc-footer .hex { color: #C9A84C; font-style: normal; }
 
-    .rr-principle-box {
-      background: var(--gold-dim);
-      border: 1px solid rgba(184,146,42,0.3);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-      margin: 12px 0;
-      font-style: italic;
-    }
+    /* ACK CTA */
+    .ack-cta { margin-top: 24px; background: linear-gradient(135deg, rgba(0,200,224,0.08), rgba(0,200,224,0.03)); border: 1px solid rgba(0,200,224,0.25); border-radius: 10px; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .ack-cta-text { font-size: 0.85rem; color: rgba(245,240,232,0.8); line-height: 1.5; }
+    .ack-cta-text strong { color: var(--white); }
+    .ack-cta-btn { display: inline-block; background: var(--cyan); color: #000; font-weight: 800; font-size: 0.82rem; padding: 11px 22px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+    .ack-cta-btn:hover { background: #00E0FA; }
 
-    .rr-club-block {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--navy);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      margin-bottom: 20px;
-    }
-    .rr-club-block h4 {
-      font-size: 1rem;
-      margin-bottom: 14px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      color: var(--navy);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-    .rr-club-block .club-what {
-      font-size: 0.92rem;
-      margin-bottom: 16px;
-      line-height: 1.7;
-      color: var(--text-body);
-    }
-    .rr-prop-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--navy);
-      margin: 14px 0 6px;
-    }
-    .rr-prop-label:first-of-type { margin-top: 0; }
-    .rr-club-block ul, .rr-club-block ol {
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-bottom: 4px;
-    }
-    .rr-club-block li {
-      font-size: 0.9rem;
-      color: var(--text-body);
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.55;
-    }
-    .rr-club-block li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--gold-dark);
-      font-weight: 700;
-    }
-    .rr-cert-block {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--navy);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-bottom: 16px;
-    }
-    .rr-cert-block h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      margin-bottom: 10px;
-    }
-    .rr-cert-block ul {
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin: 0;
-    }
-    .rr-cert-block li {
-      font-size: 0.88rem;
-      color: var(--text-body);
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.55;
-    }
-    .rr-cert-block li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--muted);
-    }
-    /* Download CTA */
-    .rr-download-bar {
-      background: var(--navy);
-      border-radius: var(--radius-lg);
-      padding: 28px 32px;
-      margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .rr-download-bar .dl-text h4 {
-      color: var(--white);
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .rr-download-bar .dl-text p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.83rem;
-      margin: 0;
-    }
-    .rr-download-bar a.dl-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 11px 24px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .rr-download-bar a.dl-btn:hover { background: var(--gold-light); }
-
-    .rr-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 0.88rem;
-    }
-    .rr-table th {
-      background: var(--navy);
-      color: var(--white);
-      padding: 10px 14px;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-    .rr-table td {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-body);
-    }
-    .rr-table tr:nth-child(even) td { background: var(--off-white); }
-
-    .rr-signatures {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      margin-top: 64px;
-    }
-    .rr-signatures h3 { margin-bottom: 20px; }
-    .rr-sig-block {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-    .rr-sig-block p { font-size: 0.9rem; margin-bottom: 4px; }
-
-    .rr-back-bar {
-      background: var(--navy);
-      padding: 20px 0;
-      text-align: center;
-    }
-    .rr-back-bar a { color: var(--gold); font-weight: 600; }
-    .rr-back-bar a:hover { color: var(--gold-light); }
-
-    @media (max-width: 760px) {
-      .rr-toc-grid { grid-template-columns: repeat(2, 1fr); }
-      .rr-meta { flex-direction: column; gap: 8px; }
-    }
-    @media (max-width: 520px) {
-      .rr-toc-grid { grid-template-columns: 1fr; }
-    }
+    /* FOOTER */
+    .site-footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 24px 20px; text-align: center; }
+    .site-footer p { font-size: 0.72rem; color: var(--muted); line-height: 1.7; }
+    .site-footer a { color: var(--gold); text-decoration: none; }
   </style>
 </head>
 <body>
 
-  <!-- BACK NAV -->
-  <div class="rr-doc-nav">
-    <div class="container">
-      <a href="/" class="nav-home">← Block by Block AI Safety &amp; Security Alliance</a>
-      <span style="color:rgba(255,255,255,0.4); font-size:0.82rem;">Rules &amp; Regulations — Version 1.1 &nbsp;·&nbsp; May 1, 2026</span>
+<nav class="top-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-hex">⬡</span>
+      <div class="nav-name">Block by Block<span>AI Safety &amp; Security Alliance</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/rules" class="active">Rules &amp; Regs</a>
+      <a href="/50-principles">50 Principles</a>
+      <a href="/acknowledge">Acknowledge</a>
     </div>
   </div>
+</nav>
 
-  <!-- DOCUMENT HERO -->
-  <div class="rr-doc-hero">
-    <div class="container">
-      <div class="section-label" style="color:var(--gold); margin-bottom:12px;">BASSA-GOVERNANCE-V1.1-2026</div>
-      <h1>Block by Block AI Safety &amp; Security Alliance<br />Rules &amp; Regulations — Version 1.1</h1>
-      <div class="rr-meta">
-        <div class="rr-meta-item"><strong>Effective Date:</strong> May 1, 2026</div>
-        <div class="rr-meta-item"><strong>Issuing Body:</strong> Pure Expertz LLC</div>
-        <div class="rr-meta-item"><strong>Classification:</strong> Public — Versioned Governance Document</div>
-        <div class="rr-meta-item"><strong>Supersedes:</strong> Version 1.0 (May 1, 2026)</div>
-        <div class="rr-meta-item"><strong>Next Review:</strong> May 1, 2027</div>
-        <div class="rr-meta-item"><strong>Governing Law:</strong> State of Illinois</div>
-      </div>
+<div class="page-header">
+  <div class="header-inner">
+    <div class="doc-badge"><span class="dot"></span> Alliance Governance Document · Active</div>
+    <h1>Rules &amp; Regulations — Version 1.6</h1>
+    <div class="doc-meta">
+      <span><strong>Effective:</strong> June 1, 2026</span>
+      <span><strong>Supersedes:</strong> v1.5 (May 11, 2026)</span>
+      <span><strong>Steward:</strong> Pure Expertz™ LLC</span>
+      <span><strong>Governing Law:</strong> State of Illinois</span>
+    </div>
+    <div class="download-bar">
+      <a class="dl-btn dl-btn-pdf" href="https://pureexpertz.ai/docs/contracts/Block-by-Block-Alliance-Rules-and-Regulations-v1.6.pdf" target="_blank" rel="noopener">⬇ Download PDF</a>
+      <a class="dl-btn dl-btn-docx" href="https://pureexpertz.ai/docs/contracts/Block-by-Block-Alliance-Rules-and-Regulations-v1.6.docx" target="_blank" rel="noopener">⬇ DOCX</a>
+      <a class="dl-btn dl-btn-ack" href="/acknowledge">✍ Acknowledge the Three Laws →</a>
     </div>
   </div>
+</div>
 
-  <!-- TABLE OF CONTENTS -->
-  <div class="rr-toc">
-    <div class="container">
-      <h4>Contents</h4>
-      <div class="rr-toc-grid">
-        <a href="#preamble">Preamble</a>
-        <a href="#article-i">Art. I — Name &amp; Purpose</a>
-        <a href="#article-ii">Art. II — The Three Laws</a>
-        <a href="#article-iii">Art. III — Club Entry System</a>
-        <a href="#article-iv">Art. IV — Membership &amp; Chapters</a>
-        <a href="#article-v">Art. V — Operating Standards</a>
-        <a href="#article-vi">Art. VI — Certification Paths</a>
-        <a href="#article-vii">Art. VII — Deployment Sectors</a>
-        <a href="#article-viii">Art. VIII — Version Control</a>
-        <a href="#article-ix">Art. IX — Enforcement</a>
-        <a href="#article-x">Art. X — Governing Law</a>
-        <a href="#article-xi">Art. XI — Definitions</a>
-        <a href="#signatures">Signatures &amp; Adoption</a>
-      </div>
-    </div>
-  </div>
+<div class="main-layout">
+  <aside class="toc-sidebar">
+    <h4>Contents</h4>
+    <a href="#sec0">§0 Changelog</a>
+    <a href="#sec1">§1 Name &amp; Mission</a>
+    <a href="#sec2">§2 Stewardship</a>
+    <a href="#sec3">§3 The Three Laws</a>
+    <a href="#sec4">§4 Membership</a>
+    <a href="#sec5">§5 Founding Triad</a>
+    <a href="#sec6">§6 Three Clubs</a>
+    <a href="#sec7" class="new-item">§7 AI Legislative Tracking</a>
+    <a href="#sec8">§8 HR Caucus</a>
+    <a href="#sec9">§9 IC Program</a>
+    <a href="#sec10">§10 AI Legal Pulse</a>
+    <a href="#sec11">§11 TSP Directory</a>
+    <a href="#sec12">§12 Disclosure Ladder</a>
+    <a href="#sec13">§13 Versioning</a>
+    <a href="#sec14">§14 Contact</a>
+  </aside>
 
-  <!-- DOCUMENT BODY -->
-  <div class="rr-body">
+  <div>
+    <div class="doc-viewer">
+      <div class="doc-viewer-bar">
+        <span class="dv-title">Block by Block AI Safety &amp; Security Alliance — Rules &amp; Regulations</span>
+        <span class="dv-ver">v1.6 · June 1, 2026 · PDF available above</span>
+      </div>
+      <div class="doc-scroll">
 
-    <!-- 50 PRINCIPLES DOWNLOAD BAR -->
-    <div class="rr-download-bar">
-      <div class="dl-text">
-        <h4>Free Resource — The 50 Principles of AI Safety &amp; Ethics</h4>
-        <p>Download the full framework. Use it to assess your AI readiness and choose your path inside the AI Impact Academy.</p>
-      </div>
-      <a href="/50-principles" class="dl-btn" target="_blank">Download Free ↗</a>
-    </div>
+        <div class="doc-main-title">BLOCK BY BLOCK AI SAFETY &amp; SECURITY ALLIANCE<br>Rules and Regulations — Version 1.6</div>
+        <div class="doc-head-meta">Document version: v1.6 &nbsp;·&nbsp; Effective: June 1, 2026 &nbsp;·&nbsp; Drafted: 2026-05-26<br>Steward: Pure Expertz™ LLC · unincorporated as of v1.6 · Governing Law: Illinois</div>
+        <div class="doc-supersedes">This v1.6 supersedes v1.5 (May 11, 2026). Key changes are summarized in Section 0 (Changelog) below.</div>
 
-    <!-- PREAMBLE -->
-    <div class="rr-preamble" id="preamble">
-      <strong>Preamble</strong><br /><br />
-      The Block by Block AI Safety and Security Alliance ("the Alliance") is a governance framework for the responsible development, deployment, and use of artificial intelligence. It exists because AI is moving faster than the systems designed to govern it — and that gap has consequences.<br /><br />
-      The Alliance was created to close that gap: not through legislation, but through collective commitment. Member organizations, independent consultants, and community members adopt the Alliance standards voluntarily, because they believe AI used legally, ethically, and morally is categorically better than AI that isn't.<br /><br />
-      The Alliance is rules-based, transparent, and built for iteration. As AI capabilities evolve, so do these rules. Every version update is numbered, dated, and logged.
-    </div>
-
-    <!-- ARTICLE I -->
-    <div class="rr-article" id="article-i">
-      <div class="rr-article-label">Article I</div>
-      <h2>Name and Purpose</h2>
-      <div class="rr-section">
-        <h3>Section 1.1 — Name</h3>
-        <p>The name of this organization is the Block by Block AI Safety and Security Alliance ("the Alliance"). Hereafter referred to as "the Alliance" or "the Organization."</p>
-      </div>
-      <div class="rr-section">
-        <h3>Section 1.2 — Purpose</h3>
-        <p>The Alliance exists to:</p>
-        <ol>
-          <li>Establish and enforce clear standards for legal, ethical, and moral AI use</li>
-          <li>Provide education, certification, and community accountability for AI practitioners</li>
-          <li>Govern the Club entry systems — the Strong Humans Club, the Investment Club, and the Polish-American Business and Investment Club, plus future Clubs as established</li>
-          <li>Coordinate Geographic Chapters that allow members to build community where they live</li>
-          <li>Create a scalable model for AI safety that can be adopted by organizations, schools, healthcare systems, and government agencies</li>
-        </ol>
-      </div>
-      <div class="rr-section">
-        <h3>Section 1.3 — Guiding Philosophy</h3>
-        <blockquote class="rr-quote">"Strong humans build smart systems."<cite>The Human Principle — Block by Block AI Safety &amp; Security Alliance</cite></blockquote>
-        <p>AI does not replace human judgment. It amplifies it. The strength of the human at the center determines whether AI becomes a tool or a threat.</p>
-      </div>
-    </div>
-
-    <!-- ARTICLE II -->
-    <div class="rr-article" id="article-ii">
-      <div class="rr-article-label">Article II</div>
-      <h2>The Three Laws</h2>
-      <p>Every principle in the Alliance — all 50 and counting — flows from three immutable laws. These are not guidelines. They are the standard.</p>
-      <div class="rr-section">
-        <h3>Section 2.1 — First Law: Legal</h3>
-        <blockquote class="rr-quote">"AI must comply with all applicable laws and regulations."</blockquote>
-        <p>Every deployment of AI technology must operate within the full scope of applicable law — federal, state, local, and international. References include: AIVIA, HB 3773, BIPA, Illinois SB 2427, HIPAA, and any applicable federal AI guidance.</p>
-      </div>
-      <div class="rr-section">
-        <h3>Section 2.2 — Second Law: Ethical</h3>
-        <blockquote class="rr-quote">"AI must be used in ways that are fair, transparent, and free from harmful bias."</blockquote>
-        <p>Compliance is the floor — ethics is the standard held above it. The Alliance requires that all AI deployments are auditable, explainable, and tested for disparate impact.</p>
-        <div class="rr-principle-box">Principle: "What you cannot explain, you cannot deploy."</div>
-      </div>
-      <div class="rr-section">
-        <h3>Section 2.3 — Third Law: Moral</h3>
-        <blockquote class="rr-quote">"AI must serve human dignity and the broader good."</blockquote>
-        <p>Beyond law and ethics sits the moral obligation: AI must be used to elevate, protect, and serve the people it touches. The Alliance holds members to a standard that no regulator will ever fully codify — because human dignity cannot be legislated, only chosen.</p>
-      </div>
-    </div>
-
-    <!-- ARTICLE III -->
-    <div class="rr-article" id="article-iii">
-      <div class="rr-article-label">Article III</div>
-      <h2>Club Entry System</h2>
-      <p>The Alliance is accessed through Clubs. These are the entry points. All other Alliance programs, certifications, and community structures flow from Club membership. Clubs are defined by <strong>audience and identity</strong>, not by geography. A member may belong to multiple Clubs. The Alliance does not grant territorial exclusivity to any Club, Chapter, or member.</p>
-
-      <div class="rr-club-block">
-        <h4>Section 3.1 — The Strong Humans Club</h4>
-        <p class="club-what">The professional track of the Alliance — for <strong>professionals, leaders, executives, and operators</strong> who want to be at the top of the knowledge base. Members hold each other accountable, share what works, and refine the operating standards by which the Alliance evolves.</p>
-        <p class="rr-prop-label">Entry Requirement</p>
-        <p style="font-size:0.9rem;color:var(--text-body);margin-bottom:10px;">Open enrollment via AI Impact Academy or direct Alliance membership pathway, subject to professional self-identification and adherence to the Three Laws.</p>
-        <p class="rr-prop-label">What You Get</p>
+        <h2 id="sec0">Section 0 — Changelog (v1.5 → v1.6)</h2>
+        <h3>Added in v1.6:</h3>
         <ul>
-          <li>Alliance member certificate</li>
-          <li>Access to the full 50 Principles framework</li>
-          <li>SOP library — AI policies, governance templates, compliance guides</li>
-          <li>Alliance community forums, updates, and policy alerts</li>
-          <li>Directory listing as an Alliance member</li>
-          <li>Priority access to AI Impact Academy cohorts</li>
+          <li>Three Clubs structure formalized — Strong Humans Club · Polish-American Business &amp; Investment Club · CoLiving Guy Club (Section 6, Properties Advantage tie made explicit)</li>
+          <li><strong>NEW ARTICLE — AI Legislative Compliance Tracking</strong> (Section 7) — Alliance tracks active AI legislation across 9 U.S. states (IL, FL, WI, IN, TX, CO, CA, WA, NY). Informational only, NOT legal advice. Uses LegiScan API.</li>
+          <li><strong>Hardware Leasing Program reference</strong> (Section 9.5) — every Independent Consultant is expected to acquire Network Equipment within 90 days of license execution</li>
+          <li><strong>Universal floor for Andy's engagement</strong> (Section 4.5) — $47/month TSP tier + Pure Expertz™–attachable equipment is the minimum to engage Andy Babala directly</li>
+          <li><strong>70/30 Incubator Pattern</strong> (Section 9.6) — Founders own 70%, Pure Expertz™ owns 30% of new ventures incubated through the ecosystem</li>
+          <li><strong>Founding Triad earnings via flagship cohort</strong> (Section 5.4) — 3-way principals-only split on Block by Block Sprint inaugural cohort</li>
         </ul>
-        <p class="rr-prop-label">What Is Expected of You</p>
+        <h3>Held back for v1.7 or later:</h3>
         <ul>
-          <li>AI used legally, ethically, and morally at all times</li>
-          <li>Participation in community accountability (community sessions, peer review)</li>
-          <li>Annual re-commitment to the Three Laws</li>
-          <li>Compliance with all Alliance standards as updated</li>
+          <li>Formal Law Group governance section (forms post-November 2026 Forum)</li>
+          <li>Geographic Chapters expansion (post-Pure Expertz™ Polska decision 2027–2028)</li>
+          <li>International Node-Only Setup Addendum to Hardware Lease</li>
+          <li>Polymarket-style deal brokerage framework</li>
         </ul>
-      </div>
+        <hr>
 
-      <div class="rr-club-block">
-        <h4>Section 3.2 — The Investment Club</h4>
-        <p class="club-what">The capital and deal-flow track of the Alliance — for <strong>accredited and sophisticated investors</strong> participating in AI-driven ventures, real estate syndications, and the Pure Expertz investment ecosystem under the Alliance's ethical framework.</p>
-        <p class="rr-prop-label">Entry Requirement</p>
-        <p style="font-size:0.9rem;color:var(--text-body);margin-bottom:10px;">Investment Club membership verification required. Accredited or sophisticated investor status, or participation in a qualifying investment track.</p>
-        <p class="rr-prop-label">What You Get</p>
-        <ul>
-          <li>All Strong Humans Club benefits, plus:</li>
-          <li>Access to the Alliance deal-flow portal</li>
-          <li>Investment opportunity notifications (syndications, private placements, venture rounds)</li>
-          <li>Participation in investor network calls and due diligence reviews</li>
-          <li>Entry to investor-only Alliance events</li>
-        </ul>
-        <p class="rr-prop-label">What Is Expected of You</p>
-        <ul>
-          <li>All Strong Humans Club standards, plus:</li>
-          <li>Full compliance with applicable securities laws</li>
-          <li>Disclosure of interest in any investment presented through the Alliance</li>
-          <li>No promoting or presenting unvetted investment opportunities within Alliance spaces</li>
-          <li>Annual investor re-commitment and status verification</li>
-        </ul>
-      </div>
+        <h2 id="sec1">Section 1 — Name, Form, and Mission</h2>
+        <h3>1.1 Name</h3>
+        <p>The <strong>Block by Block AI Safety &amp; Security Alliance</strong> (the "Alliance"). Also referred to as "BBA" or "the Alliance" in this document.</p>
+        <h3>1.2 Legal Form</h3>
+        <p>The Alliance operates as an <strong>unincorporated governance framework</strong> stewarded by <strong>Pure Expertz™ LLC</strong> (an Illinois limited liability company). Formal entity formation is under evaluation. The Alliance is not a separate legal entity as of v1.6.</p>
+        <h3>1.3 Mission</h3>
+        <p>The Alliance exists to (a) document working governance for AI-enhanced business and civic operations, (b) connect operators, leaders, and institutions under a shared cultural contract (the Three Laws), (c) translate evolving AI legislation and policy into operational practice, and (d) build the institutional bridges that allow AI to multiply strong humans rather than commoditize them.</p>
+        <h3>1.4 Operating Thesis</h3>
+        <div class="laws-box"><p><strong>Smart Systems + Strong Humans.</strong> Every Alliance activity reflects the operating thesis that AI multiplies the strong human and commoditizes the weak one. Members of the Alliance are working on being the first kind.</p></div>
+        <hr>
 
-      <div class="rr-club-block">
-        <h4>Section 3.3 — The Polish-American Business and Investment Club</h4>
-        <p class="club-what">A cultural-community track of the Alliance, organized around the <strong>Polish-American business and professional community</strong>. Operates under the same Three Laws and Alliance standards, with programming, events, and resources in English and Polish where applicable.</p>
-        <p class="rr-prop-label">Entry Requirement</p>
-        <p style="font-size:0.9rem;color:var(--text-body);margin-bottom:10px;">Self-identification as a member of the Polish-American business or professional community, plus standard Alliance member commitments.</p>
-        <p class="rr-prop-label">What You Get</p>
+        <h2 id="sec2">Section 2 — Stewardship and Governance</h2>
+        <h3>2.1 Steward</h3>
+        <p><strong>Pure Expertz™ LLC</strong> is the administrative steward of the Alliance. Stewardship duties include maintaining the Alliance Rules and Regulations document set; hosting Alliance communications and digital infrastructure; administering the Alliance Acknowledgment Gate at blockbyblockalliance.com/acknowledge; coordinating Alliance events, including the AI Impact Forum series; and providing the operational layer that allows the Alliance to function before any future formal entity formation.</p>
+        <h3>2.2 Founding Triad</h3>
+        <p>Governance of the Alliance is informed by the <strong>Pure Expertz™ Founding Triad</strong>:</p>
         <ul>
-          <li>All Strong Humans Club benefits</li>
-          <li>Cultural-context programming — events, sessions, and materials in English and Polish where applicable</li>
-          <li>Connection to the broader Polish-American business and investment community</li>
-          <li>Access to investment opportunities developed for or with the community</li>
+          <li><strong>Andy Babala</strong> (Founder, Pure Expertz™ LLC) — 40% economic participation</li>
+          <li><strong>Thomas Nowicki</strong> — 30% economic participation</li>
+          <li><strong>Dr. John D. Byrnes, D.Hum, FACHT</strong> (Founder &amp; CEO, Center for Aggression Management) — 30% economic participation</li>
         </ul>
-        <p class="rr-prop-label">What Is Expected of You</p>
+        <h3>2.3 Future Law Group</h3>
+        <p>A formal <strong>Pure Expertz™ Law Group</strong> is expected to be seated following the November 2026 AI Impact Forum or later. The Law Group governance section will be added in v1.7 or later.</p>
+        <h3>2.4 Decision-Making Standards</h3>
         <ul>
-          <li>All Strong Humans Club standards</li>
-          <li>Active participation in community-relevant programming</li>
-          <li>Adherence to Alliance Three Laws and operating principles</li>
+          <li><strong>Stewardship decisions</strong> — administrative operations, made by Pure Expertz™ LLC as steward.</li>
+          <li><strong>Strategic decisions</strong> — affecting cross-Club operations, Three Laws interpretations, or member rights — require Founding Triad consultation.</li>
+          <li><strong>Cultural-contract decisions</strong> — affecting Three Laws application — escalated to the Law Group when formed, advisory to Founding Triad until then.</li>
         </ul>
-      </div>
+        <hr>
 
-      <div class="rr-section">
-        <h3>Section 3.4 — Future Clubs and Expansion</h3>
-        <p>The Alliance reserves the right to establish additional Clubs as the community grows — around professional verticals (real estate, healthcare, security, etc.), cultural communities, or shared missions. All Clubs operate under these Rules &amp; Regulations and the Three Laws.</p>
-      </div>
-    </div>
+        <h2 id="sec3">Section 3 — The Three Laws</h2>
+        <p>The cultural contract of the Alliance. Every member, vendor, partner, Independent Consultant, cohort participant, and Founding Triad member acknowledges and operates under the Three Laws.</p>
+        <h3>3.1 Legal</h3>
+        <div class="laws-box"><p><strong>All activity complies with applicable law in the jurisdictions where it occurs.</strong></p></div>
+        <ul>
+          <li>Where law is settled, compliance is straightforward and non-negotiable.</li>
+          <li>Where law is unsettled or evolving (as is common in 2026 AI legislation), Alliance members default to the more conservative interpretation and document their reasoning.</li>
+          <li>Where law conflicts across jurisdictions, members elevate the question through Alliance steward channels before acting.</li>
+        </ul>
+        <div class="eg-box"><strong>Application examples:</strong> An Independent Consultant operating in a state with new AI-disclosure laws must comply in all client-facing materials. A cohort participant deploying an AI agent in a regulated industry must comply with applicable regulatory frameworks. A Founding Triad member structuring an Investment Group SPV must ensure full compliance with applicable securities laws.</div>
+        <h3>3.2 Ethical</h3>
+        <div class="laws-box"><p><strong>All activity respects the professional ethics applicable to each participant's profession and the broader ethical norms of the markets in which the Alliance operates.</strong></p></div>
+        <ul>
+          <li>Where ethical norms diverge from law, both are addressed independently. Compliance with the law is necessary but not sufficient.</li>
+          <li>Professional ethics (attorneys, real estate professionals, security professionals, healthcare professionals, financial advisors) take precedence over Alliance norms in the practice of those professions.</li>
+          <li>Conflicts of interest, dual representation, and undisclosed material relationships are considered ethical violations regardless of whether they are also legal violations.</li>
+        </ul>
+        <div class="eg-box"><strong>Application examples:</strong> An Alliance member who is also a licensed attorney must comply with their state bar's ethical rules in any Alliance activity that touches their practice of law. A Trusted Service Provider must disclose any material conflicts of interest to clients before accepting an engagement. Independent Consultants must disclose to prospective clients that they operate under license from Pure Expertz™.</div>
+        <h3>3.3 Moral</h3>
+        <div class="laws-box"><p><strong>All activity considers the impact on the individuals, families, communities, and institutions affected.</strong></p></div>
+        <ul>
+          <li>The Alliance explicitly rejects business activity that delivers economic results at the cost of demonstrable human harm.</li>
+          <li>Members are expected to apply moral reasoning even where law and professional ethics are silent.</li>
+          <li>Where a member is uncertain whether activity passes the moral test, they raise the question through Alliance steward channels before acting.</li>
+        </ul>
+        <div class="eg-box"><strong>Application examples:</strong> An AI-enhanced workflow that eliminates jobs without offering displaced workers a reasonable transition path fails the moral test. Marketing language that exploits fear, urgency, or emotional vulnerability fails the moral test. Wellness travel offerings that ignore labor conditions of in-country workers or environmental impact fail the moral test.</div>
+        <h3>3.4 The Three Laws Acknowledgment Gate</h3>
+        <p>All formal engagement with the Alliance — Independent Consultant licensing, cohort enrollment, Mastermind participation, Founding Triad activity, Investment Group subscription, Trusted Service Provider directory listing, Hardware Lease Agreement execution, Power Partner candidacy — requires explicit acknowledgment of the Three Laws via the Alliance Acknowledgment Gate at <strong>blockbyblockalliance.com/acknowledge</strong>.</p>
+        <p>The Acknowledgment Gate is not a contract by itself. It is a cultural commitment. Subsequent engagement-specific agreements incorporate the acknowledgment by reference.</p>
+        <hr>
 
-    <!-- ARTICLE IV -->
-    <div class="rr-article" id="article-iv">
-      <div class="rr-article-label">Article IV</div>
-      <h2>Membership Tiers, Chapters, and Hubs</h2>
+        <h2 id="sec4">Section 4 — Membership Categories</h2>
+        <h3>4.1 Public Participants</h3>
+        <p>Anyone may participate in the open community at community.pureexpertz.ai, Open Office Hours at zoom.pureexpertz.ai, the AI Impact Forum series (paid tickets; no membership required), and public Alliance communications. Public participants do not formally acknowledge the Three Laws and do not have access to gated programs.</p>
+        <h3>4.2 Acknowledged Members</h3>
+        <p>Acknowledged Members have completed the Alliance Acknowledgment Gate. This unlocks eligibility for Independent Consultant licensing, cohort enrollment, Mastermind participation, Trusted Service Provider directory consideration, AI Legal Pulse subscription, and the Hardware Leasing Program.</p>
+        <h3>4.3 Engaged Members</h3>
+        <p>Engaged Members have entered into specific Pure Expertz™ engagement agreements. Engaged Members are bound by both the Three Laws and the specific terms of their engagement.</p>
+        <h3>4.4 Founding Triad Members</h3>
+        <p>Founding Triad Members operate under the Founding Triad MOU and definitive operating agreements. They carry shared responsibility for upholding the Three Laws and the operational integrity of Pure Expertz™ activities.</p>
+        <h3>4.5 Universal Floor for Andy Babala Engagement <span class="new-tag">New in v1.6</span></h3>
+        <p>Direct engagement with Andy Babala in his capacity as Founder of Pure Expertz™ LLC requires, at minimum:</p>
+        <ul>
+          <li>(a) Membership at the <strong>Trusted Service Provider ($47/month) tier</strong> or higher; AND</li>
+          <li>(b) Pure Expertz™–attachable equipment — either through a Hardware Lease Agreement, a Node-Only Setup Agreement, or otherwise — that allows Andy to connect to the operator's working environment through the Tailscale Node.</li>
+        </ul>
+        <p>Below this floor, prospective engagements are redirected to the free community at community.pureexpertz.ai for self-service learning until the prospect meets the floor.</p>
+        <div class="warn-box"><p><strong>Operating doctrine:</strong> All working relationships are structured as license, ownership, investment, or partnership — never employment. Below the floor, no working relationship is engaged.</p></div>
+        <hr>
 
-      <div class="rr-section">
-        <h3>Section 4.1 — Standard Member (Academy Graduate)</h3>
-        <p><strong>Eligibility:</strong> Complete any AI Impact Academy certification — AI Champion, AI Director, or AI Consultant.</p>
+        <h2 id="sec5">Section 5 — Founding Triad Reference</h2>
+        <h3>5.1 Composition</h3>
+        <p>As of v1.6, the Founding Triad consists of Andy Babala, Thomas Nowicki, and Dr. John D. Byrnes, D.Hum, FACHT.</p>
+        <h3>5.2 Governance Documents</h3>
+        <p>Founding Triad governance is documented in the Founding Triad MOU (v1, May 2026), definitive operating agreements to be executed within 90 days of MOU, the Pure Expertz™ Master Disclosure Document v1, and this Alliance Rules and Regulations document set.</p>
+        <h3>5.3 Role in Alliance</h3>
         <ul>
-          <li>Full Alliance membership certificate</li>
-          <li>Access to the complete 50 Principles framework</li>
-          <li>SOP library — AI policies, governance templates, compliance guides</li>
-          <li>Alliance member designation on your credential</li>
-          <li>Access to Alliance forums, updates, and policy alerts</li>
-          <li>Listed in the Alliance member directory</li>
+          <li><strong>Thomas Nowicki</strong> anchors Real Estate / Custom Builder track via Siesta Kay Properties</li>
+          <li><strong>Dr. John Byrnes</strong> anchors Safety &amp; Aggression Management track via the Center for Aggression Management and the Critical Aggression Prevention System (CAPS) framework</li>
+          <li><strong>Andy Babala</strong> anchors the overall ecosystem</li>
         </ul>
-      </div>
+        <h3>5.4 Founding Triad Earnings via Flagship Cohort <span class="new-tag">New in v1.6</span></h3>
+        <p>The <strong>inaugural Block by Block Sprint Cohort</strong> (90-day program launching Thursday June 25, 2026, base seat price $8,995, seat range 6–15) is the first Founding Triad economic vehicle. Revenue from the inaugural Cohort is split 3 ways, principals only:</p>
+        <ul>
+          <li>Andy Babala — 40%</li>
+          <li>Thomas Nowicki — 30%</li>
+          <li>Dr. John D. Byrnes — 30%</li>
+        </ul>
+        <p>Subsequent Cohorts may follow the standard outside cohort-host commission model (30% to the host) unless explicitly designated by the Founding Triad as another flagship principals-only split.</p>
+        <hr>
 
-      <div class="rr-section">
-        <h3>Section 4.2 — Founding Member (By Invitation Only)</h3>
-        <p><strong>Eligibility:</strong> Extended to recognized practitioners, organizations, and thought leaders who already embody the Three Laws. Not a purchasable tier. Limited to the first 12 members.</p>
+        <h2 id="sec6">Section 6 — The Three Clubs</h2>
+        <p>Three operating clubs sit under the Alliance. Each Club serves a specific community and operates under the Three Laws cultural contract. All Clubs are free to join after Alliance acknowledgment.</p>
+        <h3>6.1 Strong Humans Club</h3>
+        <p><strong>Purpose:</strong> The cultural contract behind the Pure Expertz™ Smart Systems + Strong Humans thesis. For professionals and leaders across sectors who refuse to be commoditized. <strong>Cadence:</strong> Weekly Club call; Open Office Hours overlap; Forum cross-pollination; Three Laws quarterly review. <strong>Sector:</strong> Sector-agnostic — real estate, security, healthcare, EHS, legal, consulting, technology. Sub-segment: HR Caucus (see Section 8).</p>
+        <h3>6.2 Polish-American Business &amp; Investment Club</h3>
+        <p><strong>Purpose:</strong> Heritage-rooted business and investment club for Polish-American operators across US and Poland. <strong>Cadence:</strong> Weekly bilingual Polish/English call; capital introduction sessions; directory of members. <em>Note: Pure Expertz™ Polska is a 2027–2028 plan. The Club exists today as a US-based community.</em></p>
+        <h3>6.3 CoLiving Guy Club <span class="new-tag">Clarified in v1.6</span></h3>
+        <p><strong>Purpose:</strong> Operating framework for co-living and multigenerational living arrangements. <strong>Properties Advantage LLC</strong> is the operational vehicle for co-living framework deployments — a "management company for management companies," not a brokerage. The Club connects co-living operators with each other and with capital partners through the Pure Expertz™ Investment Group framework.</p>
+        <h3>6.4 Inter-Club Operations</h3>
         <ul>
-          <li>Seat on the Founding Advisory Council</li>
-          <li>Speaking position at the AI Signature Forums (May, August, November)</li>
-          <li>Framework cited as an Alliance-recognized model</li>
-          <li>Co-development of sector-specific governance modules</li>
-          <li>Cross-promotion across all Pure Expertz channels and cohorts</li>
-          <li>Permanent founding designation</li>
+          <li>Members may belong to multiple Clubs.</li>
+          <li>Clubs share the Three Laws cultural contract but operate independent program cadences.</li>
+          <li>Cross-Club referrals are encouraged where members benefit from multiple Club resources.</li>
         </ul>
-        <p style="font-size:0.88rem;color:var(--text-body);margin-top:10px;"><strong>How to apply:</strong> Request Founding Member Consideration via <a href="https://calendly.com/AndyBabala" target="_blank">calendly.com/AndyBabala</a></p>
-      </div>
+        <h3>6.5 Important Disclosures for Real Estate–Adjacent Activity <span class="new-tag">New in v1.6</span></h3>
+        <div class="crit-box">
+          <p><strong>Discussions inside the Clubs are educational and community-building only.</strong></p>
+          <ul style="margin-top:8px;">
+            <li>Pure Expertz™ LLC does NOT broker real estate transactions, hold a real estate license, or receive economic benefit from real estate transactions among members.</li>
+            <li>Investment discussions are NOT solicitations of securities. Any investment activity that constitutes a security transaction must comply with applicable securities laws, including Regulation D 506(c) accredited-investor requirements.</li>
+            <li>Members are responsible for engaging their own real estate professionals, tax advisors, and securities attorneys for transactions arising from Club connections.</li>
+          </ul>
+        </div>
+        <hr>
 
-      <div class="rr-section">
-        <h3>Section 4.3 — Trusted Service Provider</h3>
-        <p><strong>Eligibility:</strong> Active Alliance member in professional track; complete background check verification.</p>
+        <h2 id="sec7">Section 7 — AI Legislative Compliance Tracking <span class="new-tag">New in v1.6</span></h2>
+        <h3>7.1 Purpose</h3>
+        <p>The Alliance tracks active AI legislation and regulatory activity across the United States and provides status updates to members. The purpose is to keep operators in the ecosystem <strong>aware</strong> of evolving compliance landscapes that affect their use of AI.</p>
+        <h3>7.2 States Currently Tracked</h3>
+        <p>As of v1.6, the Alliance actively tracks AI legislation in nine (9) states: <strong>Illinois (IL)</strong> — primary tracking jurisdiction · <strong>Florida (FL)</strong> · <strong>Wisconsin (WI)</strong> · <strong>Indiana (IN)</strong> · <strong>Texas (TX)</strong> · <strong>Colorado (CO)</strong> · <strong>California (CA)</strong> · <strong>Washington (WA)</strong> · <strong>New York (NY)</strong>. This list will expand as the Alliance grows.</p>
+        <h3>7.3 Data Source and Methodology</h3>
+        <p>The Alliance uses the <strong>LegiScan API</strong> as the primary source for daily legislative data. Internal analysts review flagged bills, categorize them by stage (introduced → committee → passed → signed → effective), and translate legal-language status into plain-English updates for members.</p>
+        <h3>7.4 Frequency and Format</h3>
         <ul>
-          <li>All Standard Member benefits, plus:</li>
-          <li>Full criminal and background history check (Month 2 of membership)</li>
-          <li>Trusted Service Provider badge displayed in member directory</li>
-          <li>Referral priority within Alliance networks</li>
+          <li><strong>Monthly Legislative Brief</strong> — published to Alliance members through community.pureexpertz.ai</li>
+          <li><strong>Material change alerts</strong> — when a bill in a tracked state changes stage, members in the affected state receive a same-week alert</li>
+          <li><strong>Quarterly cross-jurisdiction summary</strong> — comparing how the tracked states are converging or diverging on AI-policy questions</li>
         </ul>
-        <p style="font-size:0.88rem;color:var(--text-body);margin-top:12px;padding:12px 16px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--border);"><strong>Geographic information (zip code):</strong> Provided at registration for community connection purposes only. This does <strong>not</strong> grant or imply territorial exclusivity. Multiple Trusted Service Providers may serve the same zip code or region.</p>
-      </div>
+        <h3>7.5 CRITICAL: Informational Only — NOT Legal Advice</h3>
+        <div class="crit-box">
+          <p><strong>The Alliance Legislative Tracking is informational and educational only. It is NOT legal advice.</strong></p>
+          <ul style="margin-top:8px;">
+            <li>(a) The Alliance does NOT advise members on whether specific bills apply to their specific operations</li>
+            <li>(b) The Alliance does NOT advise members on compliance strategies for any specific bill or regulation</li>
+            <li>(c) Members must consult <strong>qualified legal counsel</strong> licensed in the relevant jurisdiction for any compliance decision</li>
+            <li>(d) Pure Expertz™ LLC is NOT a law firm and does not provide legal services</li>
+            <li>(e) Use of the Alliance Legislative Tracking does NOT create an attorney-client relationship between any party and Pure Expertz™ LLC</li>
+          </ul>
+        </div>
+        <h3>7.6 FTC "Deceptive Practice" — National AI-Disclosure Risk</h3>
+        <div class="warn-box">
+          <p>Independent of any state legislation, the <strong>Federal Trade Commission Act, Section 5</strong> prohibits "unfair or deceptive acts or practices in or affecting commerce." The FTC has signaled that failure to disclose material AI use in customer-facing communications may be considered a deceptive practice — and this risk applies <strong>nationally</strong>, regardless of state law.<br><br><strong>All Alliance members are required to disclose AI use in client-facing materials</strong> — including AI-generated content in marketing, AI-assisted customer service interactions, AI-driven decision processes that affect customers, and any other operational use of AI that a reasonable customer would want to know about.</p>
+        </div>
+        <h3>7.7 Reference Laws (Named for Awareness, NOT Interpreted)</h3>
+        <ul>
+          <li><strong>AIVIA</strong> (Artificial Intelligence Video Interview Act, Illinois)</li>
+          <li><strong>HB 3773</strong> (Illinois) · <strong>BIPA</strong> (Illinois Biometric Information Privacy Act) · <strong>Illinois SB 2427</strong></li>
+          <li><strong>HIPAA</strong> (Health Insurance Portability and Accountability Act, federal)</li>
+          <li><strong>FTC Act Section 5</strong> (federal)</li>
+        </ul>
+        <p>Members should engage qualified counsel for any application of these or other laws to their specific operations.</p>
+        <h3>7.8 Alliance Position on the AI Legal R&amp;D Subscription</h3>
+        <p>The <strong>AI Legal Pulse</strong> subscription product (see Section 10) is the productized form of this tracking work. AI Legal Pulse subscribers receive deeper and more frequent intelligence than the standard Alliance Legislative Brief. AI Legal Pulse remains informational and non-legal-advice; subscribers are reminded to consult their own counsel.</p>
+        <hr>
 
-      <div class="rr-section">
-        <h3>Section 4.4 — Geographic Chapters ⭐ New in v1.1</h3>
-        <p>A Geographic Chapter is a voluntary grouping of Alliance members who share a common geographic area. Chapters allow members to build community where they live, host local events, and apply the Three Laws in their local context.</p>
-        <p><strong>No territorial exclusivity.</strong> Multiple Chapters may exist in proximity. Members are not restricted from participating in multiple Chapters.</p>
-        <p><strong>Chapter Lead role:</strong> A voluntary, prestige-based governance role — not a paid position. Chapter Leads coordinate local activities, host community events, communicate Alliance updates locally, and uphold Alliance standards within their Chapter. Appointed by Pure Expertz LLC in its sole discretion. The role does not create an employment, partnership, or franchise relationship.</p>
-        <p><strong>Chapter Lead responsibilities:</strong></p>
-        <ul>
-          <li>Maintain Three Laws and operating standards within the Chapter</li>
-          <li>Coordinate at least one Chapter community event or session per quarter</li>
-          <li>Provide a brief quarterly summary of Chapter activity to Pure Expertz LLC</li>
-          <li>Disclose any conflicts of interest or events that may reflect on the Alliance brand</li>
-          <li>Promptly notify Pure Expertz LLC of any member conduct that may violate Alliance standards</li>
-        </ul>
-        <p><strong>A Chapter is NOT:</strong></p>
-        <ul>
-          <li>A separate legal entity, franchise, or licensee of Pure Expertz LLC</li>
-          <li>A fee-collecting body in the name of the Alliance</li>
-          <li>A holder of territorial exclusivity or Alliance intellectual property</li>
-          <li>An entity that can represent the Alliance in any binding capacity</li>
-        </ul>
-      </div>
+        <h2 id="sec8">Section 8 — HR Caucus / Strong Humans Club Expansion</h2>
+        <h3>8.1 Purpose</h3>
+        <p>The <strong>HR Caucus</strong> is a working group within the Strong Humans Club focused on HR leadership, workforce strategy, and the human-capacity layer of AI-enhanced organizations.</p>
+        <h3>8.2 Activities</h3>
+        <p>The HR Caucus convenes: monthly working calls specific to HR application of the Smart Systems + Strong Humans thesis; quarterly briefings with Dr. John Byrnes on Center for Aggression Management framework applications in workplace conflict resolution; annual HR-focused workshop tracks within the AI Impact Forum series; cross-pollination calls with the Pure Expertz™ Law Group when seated.</p>
+        <h3>8.3 Membership Eligibility</h3>
+        <p>HR Caucus membership requires Acknowledged Member status; Strong Humans Club membership; professional standing as an HR leader, Chief People Officer, or workforce strategist (or aspirant); application + Founding Triad review.</p>
+        <hr>
 
-      <div class="rr-section">
-        <h3>Section 4.5 — Hub Operating License (Reference)</h3>
-        <p>Some Alliance members may operate a <strong>Hub</strong> — a local operational venue, event series, or community center bearing a Pure Expertz LLC sub-brand. Operation of a Hub requires execution of a separate <strong>Hub Operating License</strong> with Pure Expertz LLC.</p>
-        <p>Hub operation is governed by the Hub Operating License, not by these Alliance Rules &amp; Regulations. Hub Operating Licenses are non-exclusive, require ongoing operating standards, and are subject to termination per the License terms.</p>
-        <p>Inquiries: <a href="mailto:ai@pureexpertz.com">ai@pureexpertz.com</a></p>
-      </div>
-    </div>
+        <h2 id="sec9">Section 9 — Independent Consultant Program</h2>
+        <h3>9.1 Recap</h3>
+        <p>The Pure Expertz™ Independent Consultant program licenses qualified operators to (a) sell Pure Expertz™ products and engagements in their own markets, (b) run rooms under the Pure Expertz™ banner, and (c) earn 50% commission on referred Library, TSP, Academy, and Cohort subscriptions and seats.</p>
+        <h3>9.2 Three Laws Application</h3>
+        <ul>
+          <li>Independent Consultants must disclose their license status to prospects and clients.</li>
+          <li>Independent Consultants must not represent themselves as employees of Pure Expertz™ or as having authority to bind Pure Expertz™ beyond their license terms.</li>
+          <li>Independent Consultants must maintain client confidentiality consistent with the Alliance Mutual NDA template.</li>
+        </ul>
+        <h3>9.3 Recruitment Target</h3>
+        <p>Pure Expertz™ is recruiting <strong>150 Independent Consultants</strong> as the Independent Consultant cohort scales through 2026 and 2027.</p>
+        <h3>9.4 IC License Agreement and IC NDA</h3>
+        <p>The terms of Independent Consultant licensing are set forth in the Pure Expertz™ <strong>Independent Consultant License Agreement v1</strong> and the Pure Expertz™ <strong>IC NDA</strong>, both of which are signed by every Independent Consultant before activation.</p>
+        <h3>9.5 Network Equipment Requirement <span class="new-tag">New in v1.6</span></h3>
+        <p>Independent Consultants are expected to <strong>acquire Network Equipment within ninety (90) calendar days of license execution</strong> through the Pure Expertz™ Hardware Lease Agreement v1 (or, for ICs outside the United States, through a Node-Only Setup Agreement). The Network Equipment requirement ensures every IC operates with the same operating brain, the same five AI workers, the same Tailscale Node security posture, and the same continuing servicing relationship that defines the Pure Expertz™ ecosystem.</p>
+        <div class="warn-box"><p>Independent Consultants who fail to acquire Network Equipment within 90 days of license execution are subject to license review under the IC License Agreement.</p></div>
+        <h3>9.6 The 70/30 Incubator Pattern <span class="new-tag">New in v1.6</span></h3>
+        <p>Beyond the standard IC tier, Pure Expertz™ offers a <strong>70/30 Incubator Pattern</strong> for founders building new ventures inside the ecosystem:</p>
+        <ul>
+          <li>The <strong>founder owns 70%</strong> of the new venture entity</li>
+          <li><strong>Pure Expertz™ LLC owns 30%</strong> of the new venture entity</li>
+          <li>Pure Expertz™ provides: Network Equipment via Hardware Lease, 5 AI workers (BiB or CiB configuration), weekly workshop integration during 4-week launch program, Alliance brand affiliation, and the operating playbook</li>
+          <li>The founder provides: time (2+ hours/week during launch program), the idea/opportunity/market, their network, and the initial capital investment</li>
+        </ul>
+        <p>Specific terms are documented in a separate <strong>70/30 Incubator Operating Agreement</strong> executed between Pure Expertz™ LLC and the founder, on a per-venture basis.</p>
+        <hr>
 
-    <!-- ARTICLE V -->
-    <div class="rr-article" id="article-v">
-      <div class="rr-article-label">Article V</div>
-      <h2>Alliance Standards — Operating Principles</h2>
-      <div class="rr-section">
-        <h3>Section 5.1 — Core Operating Standards</h3>
-        <p>Every member, regardless of Club, Chapter, or tier, must comply with the following at all times:</p>
-        <ol>
-          <li><strong>AI used legally</strong> — no deception, no fraud, no bypass of consent</li>
-          <li><strong>AI used ethically</strong> — transparency in AI use, no discriminatory applications, human oversight on consequential decisions</li>
-          <li><strong>AI used with integrity</strong> — no shortcuts that compromise quality, human review required for high-stakes outputs</li>
-          <li><strong>Education before deployment</strong> — no member deploys AI systems they have not been trained on</li>
-          <li><strong>Community accountability</strong> — members share what works and report what doesn't within the Alliance ecosystem</li>
-          <li><strong>Financial transparency</strong> — all investment discussions disclosed appropriately; no unvetted promotions to clients or fellow members</li>
-        </ol>
-      </div>
-      <div class="rr-section">
-        <h3>Section 5.2 — Specific Restrictions</h3>
-        <p>No member shall:</p>
+        <h2 id="sec10">Section 10 — AI Legal R&amp;D Subscription (AI Legal Pulse)</h2>
+        <h3>10.1 Product Reference</h3>
+        <p>The <strong>AI Legal Pulse</strong> subscription product, operating under the Pure Expertz™ legal-research-and-development workstream, is acknowledged as an Alliance-affiliated offering. Documented at pureexpertz.ai/legal and in the Master Disclosure Document v1.</p>
+        <h3>10.2 Tier Structure</h3>
         <ul>
-          <li>Misrepresent Alliance certifications, Chapter affiliations, or membership status</li>
-          <li>Use the Alliance brand, logo, Chapter name, or materials outside authorized scope</li>
-          <li>Claim territorial exclusivity, geographic ownership, or franchise-like rights under the Alliance</li>
-          <li>Present unvetted AI products or investment opportunities within Alliance spaces</li>
-          <li>Use AI to circumvent consent, defraud, discriminate, or harm</li>
-          <li>Solicit Alliance members for competing services using information obtained through the Alliance network</li>
+          <li><strong>Solo tier ($27/mo):</strong> Individual operators, one primary zip + up to ten additional zips.</li>
+          <li><strong>Practice tier ($97/mo):</strong> Attorneys, HR leaders, and consultants. White-label for clients. 50% recurring commission on referred subscriptions.</li>
+          <li><strong>Firm tier ($297/mo):</strong> Firms requesting custom analyst review and quarterly briefing. Eligible for Law Group consideration when seated.</li>
         </ul>
-      </div>
-    </div>
+        <h3>10.3 Limitations</h3>
+        <div class="crit-box"><p>AI Legal Pulse delivers research-grade intelligence, <strong>not legal advice</strong>. Subscribers are encouraged to engage qualified attorneys for application to their specific situation. Andy Babala and Pure Expertz™ are not acting as attorneys in any AI Legal Pulse capacity.</p></div>
+        <hr>
 
-    <!-- ARTICLE VI -->
-    <div class="rr-article" id="article-vi">
-      <div class="rr-article-label">Article VI</div>
-      <h2>Certification Paths</h2>
-      <div class="rr-cert-block">
-        <h4>Section 6.1 — AI Champion</h4>
-        <ul>
-          <li><strong>Tier:</strong> First certification level</li>
-          <li><strong>Format:</strong> 4-week cohort delivered by a certified Independent Consultant (IC)</li>
-          <li><strong>Demonstrates:</strong> Foundational understanding of the Three Laws and 50 Principles</li>
-          <li><strong>Qualifies for:</strong> Standard Alliance membership · Trusted Service Provider pathway · Chapter Lead consideration</li>
-        </ul>
-      </div>
-      <div class="rr-cert-block">
-        <h4>Section 6.2 — AI Director</h4>
-        <ul>
-          <li><strong>Tier:</strong> Second certification level</li>
-          <li><strong>Format:</strong> Advanced AI implementation and governance — 3-month engagement track</li>
-          <li><strong>Demonstrates:</strong> Ability to deploy AI within an organization while maintaining Alliance compliance</li>
-          <li><strong>Qualifies for:</strong> Full Alliance membership · Trusted Service Provider · Chapter Lead consideration</li>
-        </ul>
-      </div>
-      <div class="rr-cert-block">
-        <h4>Section 6.3 — AI Consultant</h4>
-        <ul>
-          <li><strong>Tier:</strong> Third certification level</li>
-          <li><strong>Format:</strong> Full-spectrum AI consulting capability — business incubator/accelerator track</li>
-          <li><strong>Qualifies for:</strong> Founding Member pathway eligibility · Power Partner tier · Hub Operating License consideration</li>
-        </ul>
-      </div>
-    </div>
+        <h2 id="sec11">Section 11 — Trusted Service Provider Directory</h2>
+        <h3>11.1 Purpose</h3>
+        <p>The Trusted Service Provider ("TSP") directory is a curated registry of vendors, suppliers, and service providers vetted by Pure Expertz™ for alignment with the Three Laws and service quality. TSP directory membership is structured as a <strong>yearly commitment</strong> with annual renewal. Material breach of the Three Laws is grounds for removal from the directory.</p>
+        <h3>11.2 Amplification <span class="new-tag">New in v1.6</span></h3>
+        <p>Trusted Service Providers in good standing become <strong>amplified service providers</strong> — Pure Expertz™ actively promotes their services to Alliance members, Independent Consultants, and the broader ecosystem through referrals, co-marketing opportunities, and inclusion in the directory. Amplification is contingent on the TSP operating consistently within the Three Laws and following Pure Expertz™ instructions on ecosystem positioning.</p>
+        <hr>
 
-    <!-- ARTICLE VII -->
-    <div class="rr-article" id="article-vii">
-      <div class="rr-article-label">Article VII</div>
-      <h2>Deployment Sectors</h2>
-      <p>The Three Laws apply everywhere AI is deployed. Alliance standards govern the following sectors:</p>
-      <div class="rr-section">
-        <ol>
-          <li><strong>Corporate &amp; HR</strong> — Hiring AI, performance AI, surveillance AI; AIVIA and BIPA compliance</li>
-          <li><strong>Healthcare &amp; Elder Care</strong> — Cognitive decline, behavioral analytics, clinical decision support; Abundance Health Systems integration</li>
-          <li><strong>K-12 Education</strong> — SB 2427 compliance, AI in classrooms, behavioral management</li>
-          <li><strong>Higher Education</strong> — Academic integrity, campus safety AI, behavioral threat assessment; NaBITA-connected environment</li>
-          <li><strong>Government &amp; Public Safety</strong> — Insider threat, public-facing AI, first responder tools</li>
-          <li><strong>Professional Services</strong> — Law, finance, consulting, real estate</li>
-        </ol>
-      </div>
-    </div>
-
-    <!-- ARTICLE VIII -->
-    <div class="rr-article" id="article-viii">
-      <div class="rr-article-label">Article VIII</div>
-      <h2>Version Control and Amendments</h2>
-      <div class="rr-section">
-        <h3>Section 8.1 — Version Numbering</h3>
-        <p>This document is versioned using the format: <strong>v[Major].[Minor]</strong></p>
-        <ul>
-          <li><strong>Major version (.0):</strong> Significant structural changes, new articles, new Clubs, or fundamental changes to the Three Laws</li>
-          <li><strong>Minor version (0.x):</strong> Updates to specific section language, new operating principles, clarification language that does not alter fundamental structure</li>
-        </ul>
-      </div>
-      <div class="rr-section">
-        <h3>Section 8.2 — Current Version</h3>
-        <p>Version: <strong>1.1</strong> &nbsp;·&nbsp; Effective Date: <strong>May 1, 2026</strong></p>
-      </div>
-      <div class="rr-section">
-        <h3>Section 8.3 — Amendment Process</h3>
-        <ul>
-          <li>All amendments must be reviewed by the Founding Advisory Council</li>
-          <li>Minor version updates require 14-day notice to all active members</li>
-          <li>Major version updates require 30-day notice and 30-day comment period before activation</li>
-        </ul>
-        <table class="rr-table">
-          <thead>
-            <tr><th>Version</th><th>Date</th><th>Summary of Changes</th><th>Approved By</th></tr>
-          </thead>
+        <h2 id="sec12">Section 12 — Disclosure Ladder</h2>
+        <p>The Disclosure Ladder documents which Pure Expertz™ documents apply to which engagement type. Every Alliance member is entitled to know which documents govern their engagement.</p>
+        <table>
+          <thead><tr><th>Engagement Type</th><th>Documents That Apply</th></tr></thead>
           <tbody>
-            <tr>
-              <td>1.0</td>
-              <td>May 1, 2026</td>
-              <td>Initial publication</td>
-              <td>Andy Babala, Pure Expertz LLC</td>
-            </tr>
-            <tr>
-              <td>1.1</td>
-              <td>May 1, 2026</td>
-              <td>Added Polish-American Business &amp; Investment Club (§3.3). Added Future Clubs (§3.4). Tightened Strong Humans Club audience. Added Geographic Chapters (§4.4). Added Hub Operating License reference (§4.5). Clarified zip code as informational, not territorial (§4.3). Updated Article XI Definitions.</td>
-              <td>Andy Babala, Pure Expertz LLC</td>
-            </tr>
+            <tr><td>Public participant (community, OOH)</td><td>Public Alliance acknowledgment only (informal)</td></tr>
+            <tr><td>Acknowledged Member (Acknowledgment Gate)</td><td>Three Laws acknowledgment at blockbyblockalliance.com/acknowledge</td></tr>
+            <tr><td>Cohort participant (90-day)</td><td>Master Disclosure + Cohort Participant Agreement</td></tr>
+            <tr><td>Independent Consultant licensee</td><td>Master Disclosure + IC License Agreement + IC NDA + Hardware Lease Agreement v1 + AppleCare Pass-Through Addendum (US) + Tailscale Node Installation Addendum</td></tr>
+            <tr><td>Mastermind member</td><td>Master Disclosure + Mastermind Agreement + Three Laws acknowledgment</td></tr>
+            <tr><td>Vendor / Trusted Service Provider</td><td>Master Disclosure + TSP Vendor Participation Agreement + Mutual NDA</td></tr>
+            <tr><td>Speaker (Forum, cohort, podcast)</td><td>Master Disclosure + Speaker Agreement + Mutual NDA</td></tr>
+            <tr><td>Founding Triad participant</td><td>Founding Triad MOU + definitive operating agreement + Master Disclosure</td></tr>
+            <tr><td>Investment Group investor</td><td>Investment Group Disclosure + deal-specific PPM + Subscription Agreement + accreditation verification</td></tr>
+            <tr><td>Power Partner candidate</td><td>Master Disclosure + Power Partner Agreement + Mutual NDA</td></tr>
+            <tr><td>AI Legal Pulse subscriber</td><td>Subscriber Terms + Master Disclosure (incorporated by reference)</td></tr>
+            <tr><td>HR Caucus member</td><td>Master Disclosure + Strong Humans Club acknowledgment</td></tr>
+            <tr><td><strong>Hardware Lease lessee (general)</strong></td><td><strong>Master Disclosure + Hardware Lease Agreement v1 + AppleCare Pass-Through Addendum (US) + Tailscale Node Installation Addendum + Three Laws acknowledgment</strong></td></tr>
+            <tr><td><strong>70/30 Incubator founder</strong></td><td><strong>Master Disclosure + 70/30 Incubator Operating Agreement + Hardware Lease Agreement v1 + standard Addenda + Three Laws acknowledgment</strong></td></tr>
           </tbody>
         </table>
-      </div>
-      <div class="rr-section">
-        <h3>Section 8.4 — Active Members Notice</h3>
-        <p>It is the responsibility of each member to stay current with the latest version of the Rules &amp; Regulations. The most current version is always available at: <a href="https://blockbyblockalliance.com/rules.html" target="_blank">blockbyblockalliance.com/rules.html</a></p>
-      </div>
-    </div>
+        <hr>
 
-    <!-- ARTICLE IX -->
-    <div class="rr-article" id="article-ix">
-      <div class="rr-article-label">Article IX</div>
-      <h2>Enforcement and Violations</h2>
-      <div class="rr-section">
-        <h3>Section 9.1 — Reporting</h3>
-        <p>Any member who observes a violation of Alliance standards by another member is expected to report it to the Alliance governance team within 14 days of the incident.</p>
-      </div>
-      <div class="rr-section">
-        <h3>Section 9.2 — Violation Tiers</h3>
-        <table class="rr-table">
-          <thead>
-            <tr><th>Violation Type</th><th>First Offense</th><th>Second Offense</th><th>Third Offense</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Minor (non-disclosure, late reporting)</td>
-              <td>Written warning</td>
-              <td>30-day suspension</td>
-              <td>Termination</td>
-            </tr>
-            <tr>
-              <td>Moderate (unauthorized brand use, misrepresentation, territorial exclusivity claim)</td>
-              <td>30-day suspension</td>
-              <td>Termination</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td>Severe (fraud, legal violation, discriminatory AI use)</td>
-              <td>Immediate termination</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="rr-section">
-        <h3>Section 9.3 — Immediate Termination Triggers</h3>
-        <p>The following violations result in immediate, permanent termination without notice:</p>
+        <h2 id="sec13">Section 13 — Amendment and Versioning</h2>
+        <h3>13.1 Amendment Authority</h3>
+        <p>Amendments are made by Pure Expertz™ LLC as steward, in consultation with the Founding Triad. Material amendments are circulated to Acknowledged Members at least thirty (30) days before taking effect.</p>
+        <h3>13.2 Version History</h3>
         <ul>
-          <li>Use of AI for fraud, deception, or non-consensual surveillance</li>
-          <li>Criminal conviction related to AI use or financial fraud</li>
-          <li>Violation of Alliance standards that results in harm to vulnerable populations</li>
-          <li>Failure to disclose a material change in professional licensing or legal status within 30 days</li>
-          <li>Public claim of territorial exclusivity, franchise rights, or legal ownership of Alliance brand or Chapter</li>
+          <li><strong>v1.0</strong> (May 2026) — Initial constitutional framework</li>
+          <li><strong>v1.1</strong> (May 2026) — Polish-American Club, Geographic Chapters, Hub Operating License reference</li>
+          <li><strong>v1.5</strong> (May 11, 2026) — Founding Triad reference, Three Clubs cadence, HR Caucus, AI Legal Pulse, Disclosure Ladder</li>
+          <li><strong>v1.6</strong> (June 1, 2026) — Three Clubs formalized · AI Legislative Compliance Tracking (9 states · LegiScan · FTC Section 5) · Hardware Leasing Program reference · IC Network Equipment requirement · Universal floor for Andy engagement · 70/30 Incubator Pattern · Founding Triad earnings via flagship cohort · TSP amplification</li>
+          <li><strong>v1.7</strong> (target: post-November 2026 Forum) — Pure Expertz™ Law Group governance section</li>
+          <li><strong>v2.0</strong> (target: 2027) — Formal Alliance entity formation, geographic chapters, international expansion governance</li>
         </ul>
+        <hr>
+
+        <h2 id="sec14">Section 14 — Contact and Acknowledgment</h2>
+        <h3>14.1 Contact</h3>
+        <p>All Alliance-related correspondence: <strong>support@pureexpertz.com</strong></p>
+        <h3>14.2 Acknowledgment Gate</h3>
+        <p><strong>blockbyblockalliance.com/acknowledge</strong> — the front door to formal Alliance engagement. All formal engagement begins here.</p>
+        <h3>14.3 Document Custody</h3>
+        <p>This Rules and Regulations document set is maintained in the Pure Expertz™ document repository. Published versions are made available at blockbyblockalliance.com and within Pure Expertz™ member-only spaces.</p>
+
+        <div class="doc-footer">
+          Block by Block AI Safety &amp; Security Alliance — Rules and Regulations v1.6<br>
+          Effective June 1, 2026 &nbsp;·&nbsp; Pure Expertz™ LLC, administrative steward<br>
+          <span class="hex">⬡</span> Smart Systems · Strong Humans · <span class="hex">⬡</span>
+        </div>
+
+      </div><!-- /doc-scroll -->
+    </div><!-- /doc-viewer -->
+
+    <div class="ack-cta">
+      <div class="ack-cta-text">
+        <strong>Ready to engage?</strong> Formal participation in the Alliance — IC licensing, cohort enrollment, Mastermind, TSP listing, Hardware Leasing, or AI Legal Pulse — begins with the Acknowledgment Gate.
       </div>
-      <div class="rr-section">
-        <h3>Section 9.4 — Appeals</h3>
-        <p>A member may appeal a termination in writing to the Founding Advisory Council within 30 days. Appeals are reviewed within 60 days of submission. The Founding Advisory Council's decision is final.</p>
-      </div>
+      <a href="/acknowledge" class="ack-cta-btn">✍ Acknowledge the Three Laws →</a>
     </div>
-
-    <!-- ARTICLE X -->
-    <div class="rr-article" id="article-x">
-      <div class="rr-article-label">Article X</div>
-      <h2>Governing Law and Jurisdiction</h2>
-      <div class="rr-section">
-        <h3>Section 10.1 — Governing Law</h3>
-        <p>This document and the Alliance are governed by the laws of the <strong>State of Illinois</strong>.</p>
-      </div>
-      <div class="rr-section">
-        <h3>Section 10.2 — Dispute Resolution</h3>
-        <p>Any dispute arising from Alliance membership, Chapter participation, or the application of these Rules &amp; Regulations shall first be submitted to good-faith mediation in <strong>Cook County, Illinois</strong>. If mediation fails, disputes shall be resolved through binding arbitration in Cook County, Illinois under the rules of the American Arbitration Association.</p>
-      </div>
-    </div>
-
-    <!-- ARTICLE XI -->
-    <div class="rr-article" id="article-xi">
-      <div class="rr-article-label">Article XI</div>
-      <h2>Definitions</h2>
-      <div class="rr-section">
-        <dl style="display:flex;flex-direction:column;gap:12px;">
-          <div><dt style="font-weight:700;color:var(--navy);">"The Alliance"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">Block by Block AI Safety and Security Alliance, governed by these Rules &amp; Regulations</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"The Organization"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">Pure Expertz LLC, issuing body of the Alliance</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Club"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">An audience- or identity-defined entry-point community: Strong Humans Club, Investment Club, Polish-American Business and Investment Club, and any future Clubs established under Article III</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Chapter"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">A voluntary geographic grouping of Alliance members. Not a separate legal entity. No territorial exclusivity.</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Chapter Lead"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">A voluntary, unpaid governance role appointed by Pure Expertz LLC. Does not create employment, partnership, or franchise relationships.</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Hub"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">A local operational venue or community center bearing a Pure Expertz LLC sub-brand. Requires a separate Hub Operating License.</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Hub Operating License"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">A separate license agreement governing Hub operation. Non-exclusive. Subject to its own terms.</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Member"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">Any individual or entity holding active Alliance membership in any tier</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"IC"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">Independent Consultant, operating under the Pure Expertz IC Monthly Agreement</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Three Laws"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">Legal, Ethical, Moral — the foundational principles of the Alliance</dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"50 Principles"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">The complete set of Alliance operating principles, available at <a href="https://pureexpertz.ai" target="_blank">pureexpertz.ai</a></dd></div>
-          <div><dt style="font-weight:700;color:var(--navy);">"Geographic information"</dt><dd style="font-size:0.92rem;color:var(--text-body);padding-left:16px;">Zip code, address, city, or region collected from members for community connection purposes. <strong>Not used for territorial allocation or exclusivity.</strong></dd></div>
-        </dl>
-      </div>
-    </div>
-
-    <!-- SIGNATURES -->
-    <div class="rr-signatures" id="signatures">
-      <div class="rr-article-label">Signatures &amp; Adoption</div>
-      <h3>By joining the Alliance, every member acknowledges that they have read, understood, and agree to be bound by these Rules &amp; Regulations.</h3>
-      <div class="rr-sig-block">
-        <p><strong>Issuing Authority:</strong></p>
-        <p>Pure Expertz LLC</p>
-        <p>Andy Babala, Founder &amp; CEO</p>
-        <p>PO Box 868, Glenview IL 60025</p>
-        <p><a href="mailto:andy.babala@pureexpertz.com">andy.babala@pureexpertz.com</a> &nbsp;|&nbsp; (847) 991-9985</p>
-        <p style="margin-top:16px;"><strong>Version:</strong> 1.1 &nbsp;·&nbsp; <strong>Effective:</strong> May 1, 2026 &nbsp;·&nbsp; <strong>Next Review:</strong> May 1, 2027</p>
-      </div>
-      <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border); font-size:0.82rem; color:var(--text-muted); font-style:italic;">
-        Smart Systems. Stronger Humans. &nbsp;·&nbsp; Block by Block AI Safety &amp; Security Alliance &nbsp;·&nbsp; blockbyblockalliance.com
-      </div>
-    </div>
-
-  </div><!-- /rr-body -->
-
-  <!-- BACK BAR -->
-  <div class="rr-back-bar">
-    <a href="/">← Return to blockbyblockalliance.com</a>
-    &nbsp;·&nbsp;
-    <a href="/acknowledge" style="font-weight:700;color:var(--gold);">✅ Acknowledge the Framework →</a>
-    &nbsp;·&nbsp;
-    <a href="/50-principles" target="_blank">50 AI Principles (Free)</a>
-    &nbsp;·&nbsp;
-    <a href="https://calendly.com/AndyBabala" target="_blank">Book a Call with Andy</a>
   </div>
+</div>
 
-  <script src="main.js"></script>
+<footer class="site-footer">
+  <p>
+    <a href="/">blockbyblockalliance.com</a> &nbsp;·&nbsp;
+    Steward: <a href="https://pureexpertz.pro" target="_blank">Pure Expertz™ LLC</a> &nbsp;·&nbsp;
+    Governing Law: State of Illinois &nbsp;·&nbsp;
+    <a href="/acknowledge">Acknowledge the Three Laws</a><br>
+    Not legal or financial advice. v1.6 effective June 1, 2026.
+  </p>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.toc-sidebar a');
+  var scroller = document.querySelector('.doc-scroll');
+  if(!scroller) return;
+  links.forEach(function(l){
+    l.addEventListener('click', function(e){
+      e.preventDefault();
+      var id = l.getAttribute('href').replace('#','');
+      var el = document.getElementById(id);
+      if(el) scroller.scrollTo({top: el.offsetTop - 20, behavior:'smooth'});
+    });
+  });
+  scroller.addEventListener('scroll', function(){
+    var pos = scroller.scrollTop + 60;
+    var active = null;
+    links.forEach(function(l){
+      var id = l.getAttribute('href').replace('#','');
+      var el = document.getElementById(id);
+      if(el && el.offsetTop <= pos) active = l;
+    });
+    links.forEach(function(l){ l.style.color=''; });
+    if(active) active.style.color='#C9A84C';
+  });
+})();
+</script>
 </body>
 </html>

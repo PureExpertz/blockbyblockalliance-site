@@ -357,7 +357,7 @@
 
       <p class="ack-intro">
         Before we go further, every person who engages with Andy Babala and the Pure Expertz ecosystem is asked to read and acknowledge the
-        <a href="/rules.html" target="_blank">Block by Block Alliance Rules &amp; Regulations v1.1 ↗</a>.
+        <a href="/rules" target="_blank">Block by Block Alliance Rules &amp; Regulations v1.6 ↗</a>.
         This is not a legal formality — it is a filter for mission alignment.
       </p>
 
@@ -379,8 +379,21 @@
       </div>
 
       <div class="ack-note">
-        Please read the <a href="/rules.html" target="_blank" style="color:var(--navy);font-weight:600;">full Rules &amp; Regulations</a> before making your selection. The document covers membership tiers, enforcement standards, certification paths, and governing law (State of Illinois). It takes about 5 minutes to read.
+        Please read the <a href="/rules" target="_blank" style="color:var(--navy);font-weight:600;">full Rules &amp; Regulations v1.6</a> before making your selection. The document covers membership tiers, enforcement standards, certification paths, and governing law (State of Illinois). It takes about 5 minutes to read.
       </div>
+
+      <!-- NAME + EMAIL (optional capture — helps Andy know who acknowledged) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 0;">
+        <div>
+          <label style="display:block;font-size:0.72rem;font-weight:700;color:#4A5568;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">Your Name</label>
+          <input id="ack-name" type="text" placeholder="First Last" style="width:100%;padding:10px 14px;border:1px solid #CBD5E0;border-radius:6px;font-size:0.88rem;font-family:inherit;outline:none;" />
+        </div>
+        <div>
+          <label style="display:block;font-size:0.72rem;font-weight:700;color:#4A5568;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;">Your Email</label>
+          <input id="ack-email" type="email" placeholder="you@company.com" style="width:100%;padding:10px 14px;border:1px solid #CBD5E0;border-radius:6px;font-size:0.88rem;font-family:inherit;outline:none;" />
+        </div>
+      </div>
+      <div style="font-size:0.72rem;color:#8B9AAB;margin:6px 0 20px;">Optional — helps Andy follow up personally. No marketing spam, ever.</div>
 
       <!-- CHOICE -->
       <div class="choice-group" id="choiceGroup">
@@ -540,6 +553,31 @@
 
   function submitAck() {
     if (!chosen) return;
+
+    var nameEl  = document.getElementById('ack-name');
+    var emailEl = document.getElementById('ack-email');
+    var name    = nameEl  ? nameEl.value.trim()  : '';
+    var email   = emailEl ? emailEl.value.trim() : '';
+
+    // Fire-and-forget to pe-api (non-blocking)
+    if (email) {
+      var ref = 'ACK-' + Date.now() + '-' + Math.random().toString(36).substr(2,6).toUpperCase();
+      fetch('https://pureexpertz.pro/api/engage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ref_id:    ref,
+          name:      name || email,
+          email:     email,
+          title:     '',
+          company:   '',
+          category:  'bba-acknowledgment',
+          notes:     'Block by Block Alliance Three Laws acknowledgment v1.6 · choice: ' + chosen,
+          signature: chosen === 'agree' ? 'acknowledged-three-laws-v1.6' : 'concerns-raised',
+          source:    'blockbyblockalliance.com/acknowledge'
+        })
+      }).catch(function(){});
+    }
 
     // Hide the form section
     document.getElementById('ack-form-section').style.display = 'none';
