@@ -684,8 +684,94 @@ a:hover { color: var(--gold-light); }
 }
 
 /* ============================================================
-   NEW SECTIONS — v1.1 UPDATE
+   NEW SECTIONS — v1.6 UPDATE
    ============================================================ */
+
+/* ── ECOSYSTEM GATEWAY ── */
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+.eco-card {
+  background: #0D1425;
+  border: 1px solid #1F2C45;
+  border-top: 3px solid #1F2C45;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #F4F1EA;
+  display: flex;
+  flex-direction: column;
+  transition: border-top-color .2s, transform .15s, box-shadow .2s;
+}
+.eco-card:hover {
+  border-top-color: #C9A84C;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.eco-card-featured {
+  border-top-color: #C9A84C;
+}
+.eco-browser-bar {
+  background: #070B17;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #1F2C45;
+}
+.eco-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.eco-address {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #5B6376;
+  margin-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.eco-preview {
+  padding: 18px 18px 12px;
+  flex: 1;
+}
+.eco-preview-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9AA3B5;
+  margin-bottom: 8px;
+}
+.eco-preview-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #F4F1EA;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.eco-preview-sub {
+  font-size: 0.8rem;
+  color: #5B6376;
+  line-height: 1.6;
+}
+.eco-card-cta {
+  padding: 10px 18px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9AA3B5;
+  border-top: 1px solid #1F2C45;
+  transition: color .15s;
+}
+.eco-card:hover .eco-card-cta { color: #C9A84C; }
+@media (max-width: 900px) {
+  .eco-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .eco-grid { grid-template-columns: 1fr; }
+}
 
 /* ── CLUBS ── */
 .clubs {
@@ -1532,6 +1618,125 @@ a:hover { color: var(--gold-light); }
     </div>
   </section>
 
+  <!-- ECOSYSTEM GATEWAY -->
+  <section class="ecosystem-gateway" id="ecosystem" style="background:#060B18;padding:80px 0;border-top:2px solid #1F2C45;">
+    <div class="container">
+      <div class="section-label">The Pure Expertz™ Ecosystem</div>
+      <h2 style="color:#F4F1EA;font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:400;margin:0 0 12px;">Everything you need to get started.</h2>
+      <p style="color:#9AA3B5;font-size:1rem;max-width:600px;margin:0 auto 48px;line-height:1.7;">
+        The Alliance is the framework. Pure Expertz™ is the operating system that runs on top of it.
+        Every door below is free to walk through.
+      </p>
+
+      <div class="eco-grid">
+
+        <!-- Community -->
+        <a href="https://community.pureexpertz.ai" target="_blank" class="eco-card">
+          <div class="eco-browser-bar">
+            <span class="eco-dot" style="background:#ff5f57"></span>
+            <span class="eco-dot" style="background:#febc2e"></span>
+            <span class="eco-dot" style="background:#28c840"></span>
+            <span class="eco-address">community.pureexpertz.ai</span>
+          </div>
+          <div class="eco-preview">
+            <div class="eco-preview-eyebrow">Strong Humans Club · 30-day free trial</div>
+            <div class="eco-preview-headline">The community front door</div>
+            <div class="eco-preview-sub">Weekly live sessions · Alliance onboarding · peer operators comparing notes</div>
+          </div>
+          <div class="eco-card-cta">Join the community →</div>
+        </a>
+
+        <!-- Live Sessions -->
+        <a href="https://zoom.pureexpertz.ai" target="_blank" class="eco-card">
+          <div class="eco-browser-bar">
+            <span class="eco-dot" style="background:#ff5f57"></span>
+            <span class="eco-dot" style="background:#febc2e"></span>
+            <span class="eco-dot" style="background:#28c840"></span>
+            <span class="eco-address">zoom.pureexpertz.ai</span>
+          </div>
+          <div class="eco-preview">
+            <div class="eco-preview-eyebrow">Open drop-in · No registration required</div>
+            <div class="eco-preview-headline">Weekly live sessions</div>
+            <div class="eco-preview-sub">Finance · sales · marketing · operations · health &amp; wellness. Thursdays 3 PM CT: Cohort Preview</div>
+          </div>
+          <div class="eco-card-cta">See the full schedule →</div>
+        </a>
+
+        <!-- Sprint Cohort -->
+        <a href="https://pureexpertz.pro/forms/sprint-cohort.html" target="_blank" class="eco-card eco-card-featured">
+          <div class="eco-browser-bar">
+            <span class="eco-dot" style="background:#ff5f57"></span>
+            <span class="eco-dot" style="background:#febc2e"></span>
+            <span class="eco-dot" style="background:#28c840"></span>
+            <span class="eco-address">pureexpertz.pro/forms/sprint-cohort</span>
+          </div>
+          <div class="eco-preview">
+            <div class="eco-preview-eyebrow" style="color:#C9A84C;">🔴 OPEN · June 25, 2026 Launch</div>
+            <div class="eco-preview-headline">Block by Block Sprint Cohort</div>
+            <div class="eco-preview-sub">10-week program for $1M+ organizations. Train-the-trainer. Bring your lieutenant. 12 seats.</div>
+          </div>
+          <div class="eco-card-cta" style="color:#C9A84C;">Apply for a seat →</div>
+        </a>
+
+        <!-- Forms Hub -->
+        <a href="https://pureexpertz.pro/forms/" target="_blank" class="eco-card">
+          <div class="eco-browser-bar">
+            <span class="eco-dot" style="background:#ff5f57"></span>
+            <span class="eco-dot" style="background:#febc2e"></span>
+            <span class="eco-dot" style="background:#28c840"></span>
+            <span class="eco-address">pureexpertz.pro/forms</span>
+          </div>
+          <div class="eco-preview">
+            <div class="eco-preview-eyebrow">14 intake forms · all programs</div>
+            <div class="eco-preview-headline">Find your door</div>
+            <div class="eco-preview-sub">Sprint Cohort · TSP Network · IC Internship · Workshops · Wellness Travel · Speaker applications</div>
+          </div>
+          <div class="eco-card-cta">Browse all programs →</div>
+        </a>
+
+        <!-- TSP Network -->
+        <a href="https://pureexpertz.pro/forms/tsp.html" target="_blank" class="eco-card">
+          <div class="eco-browser-bar">
+            <span class="eco-dot" style="background:#ff5f57"></span>
+            <span class="eco-dot" style="background:#febc2e"></span>
+            <span class="eco-dot" style="background:#28c840"></span>
+            <span class="eco-address">pureexpertz.pro/forms/tsp</span>
+          </div>
+          <div class="eco-preview">
+            <div class="eco-preview-eyebrow">$47/month · Builders &amp; Executors</div>
+            <div class="eco-preview-headline">Trusted Service Provider Network</div>
+            <div class="eco-preview-sub">Consultants, advisors, implementers running their own books. AI workforce deployment included.</div>
+          </div>
+          <div class="eco-card-cta">Apply to the TSP network →</div>
+        </a>
+
+        <!-- Corporate -->
+        <a href="https://core.pureexpertz.ai" target="_blank" class="eco-card">
+          <div class="eco-browser-bar">
+            <span class="eco-dot" style="background:#ff5f57"></span>
+            <span class="eco-dot" style="background:#febc2e"></span>
+            <span class="eco-dot" style="background:#28c840"></span>
+            <span class="eco-address">core.pureexpertz.ai</span>
+          </div>
+          <div class="eco-preview">
+            <div class="eco-preview-eyebrow">Corporate · Fractional CAIO · Equipment Leasing</div>
+            <div class="eco-preview-headline">Corporate engagement hub</div>
+            <div class="eco-preview-sub">AI Legal R&amp;D subscriptions · custom advisory · organization-wide deployments</div>
+          </div>
+          <div class="eco-card-cta">Corporate inquiries →</div>
+        </a>
+
+      </div><!-- end .eco-grid -->
+
+      <div style="text-align:center;margin-top:48px;">
+        <p style="color:#5B6376;font-size:0.875rem;line-height:1.7;">
+          Questions: <a href="mailto:support@pureexpertz.com" style="color:#C9A84C;">support@pureexpertz.com</a> &nbsp;·&nbsp;
+          <a href="tel:+18479919985" style="color:#C9A84C;">(847) 991-9985</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- SIGN THE ALLIANCE -->
   <section class="sign" id="sign">
     <div class="container sign-inner">
@@ -1540,9 +1745,9 @@ a:hover { color: var(--gold-light); }
       <p>Sign the framework. Start with Governance. Learn through the AI Impact Academy. Implement block by block.</p>
       <div class="sign-ctas">
         <a href="/acknowledge" class="btn btn-primary">Read &amp; Acknowledge the Framework →</a>
-        <a href="https://calendly.com/AndyBabala" target="_blank" class="btn btn-outline">Book a Call with Andy</a>
+        <a href="https://community.pureexpertz.ai" target="_blank" class="btn btn-outline">Join the Community →</a>
       </div>
-      <p class="sign-detail">Open Office Hours: Mon, Wed &amp; Fri &nbsp;·&nbsp; 2–4 PM Central &nbsp;·&nbsp; Free &nbsp;·&nbsp; No commitment</p>
+      <p class="sign-detail">Live sessions every week &nbsp;·&nbsp; Open drop-in at <a href="https://zoom.pureexpertz.ai" style="color:#C9A84C;">zoom.pureexpertz.ai</a> &nbsp;·&nbsp; Free &nbsp;·&nbsp; No commitment</p>
     </div>
   </section>
 
